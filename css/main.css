@@ -1,0 +1,35 @@
+body {
+  min-height: 100vh;
+  background-color: white;
+  /* background: no-repeat */
+  /* linear-gradient(180deg, #fed7e2 0%, #fff5f7 20%, #fff5f7 100%); */
+}
+
+canvas {
+  max-width: 100%;
+  max-height: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*BAL-library*/
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.library {
+  margin: 0px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 1000px;
+  overflow-y: auto;
+}
+
+.library img {
+  margin-bottom: 10px;
+  background: yellow;
+}
