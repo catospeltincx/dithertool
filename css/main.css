@@ -14,7 +14,7 @@ img {
   max-width: 100%;
 }
 
-/*BAL-library*/
+/*library*/
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -32,4 +32,17 @@ img {
 .library img {
   margin-bottom: 10px;
   background: yellow;
+}
+
+/*canvassen*/
+.fabric-canvas {
+  stroke: black;
+  stroke-width: 2px;
+  width: 400px;
+  height: 500px;
+}
+
+.grid {
+  grid-column: 2;
+  gap: 4;
 }

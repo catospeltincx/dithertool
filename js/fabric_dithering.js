@@ -137,7 +137,7 @@ function jsDither() {
         data[pos + 1] = 0xff;
         data[pos + 2] = 0xff;
         //brightness: veranderingen in patroon
-        err = bright - 255;
+        err = bright - 220;
       }
       for (const [dx, dy] of OFFSETS) {
         const x2 = x + dx;
