@@ -34,19 +34,7 @@ const OFFSETS = [
 ];
 
 function fabricInit() {
-  gFabricCanvas = new fabric.Canvas("fabric-canvas", {
-    width: 400,
-  });
-
-  // create a rectangle object
-  // var rect = new fabric.Rect({
-  //   left: 100,
-  //   top: 100,
-  //   fill: "#666666",
-  //   width: 20,
-  //   height: 100,
-  // });
-  // gFabricCanvas.add(rect);
+  gFabricCanvas = new fabric.Canvas("fabric-canvas");
 
   // create a circle
   var circle = new fabric.Circle({
@@ -72,38 +60,6 @@ function fabricInit() {
   });
 
   gFabricCanvas.add(circle);
-
-  //test:groen-rode-kader-hendels
-  // gFabricCanvas.item(0).set({
-  //   borderColor: "red",
-  //   cornerColor: "green",
-  //   cornerSize: 6,
-  //   transparentCorners: false,
-  // });
-
-  // gFabricCanvas.setActiveObject(gFabricCanvas.item(0));
-
-  // gradients
-
-  //afbeelding
-  // fabric.Image.fromURL("img/russian-blue-sunglasses.jpg", function (oImg) {
-  //   oImg.scale(0.5);
-  //   gFabricCanvas.add(oImg);
-  // });
-
-  //test: text with background
-  //   var text = "merci\nbedankt\nthankyou";
-  //   var textWithBackground = new fabric.Text(text, {
-  //     left: 100,
-  //     top: 100,
-  //     fontFamily: "Kosugi",
-  //     fontSize: 17,
-  //     textBackgroundColor: "rgb(0,205,0)",
-  //     stroke: "rgb(205, 0, 0)",
-  //     strokeWidth: 0.5,
-  //   });
-  //   // gFabricCanvas.add(text);
-  //   gFabricCanvas.add(textWithBackground);
 }
 
 //
