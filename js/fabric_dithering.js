@@ -1,12 +1,12 @@
 let gFabricCanvas;
-const gDitherCanvas = document.getElementById("dither-canvas");
+//const gCanvas = document.getElementById("dither-canvas");
 //const gCtx = gCanvas.getContext("2d");
 let gWidth, gHeight, gStride, gSizeInBytes;
 let gPlaying = true;
 let gSourceEl = document.getElementById("fabric-canvas");
 
 //zoom
-// const gCanvas = document.querySelector("#dither-canvas");
+const gDitherCanvas = document.querySelector("#dither-canvas");
 const gCtx = gDitherCanvas.getContext("2d");
 let gZoom = 1;
 let gX = 0;
@@ -38,12 +38,22 @@ function fabricInit() {
     width: 400,
   });
 
+  // create a rectangle object
+  // var rect = new fabric.Rect({
+  //   left: 100,
+  //   top: 100,
+  //   fill: "#666666",
+  //   width: 20,
+  //   height: 100,
+  // });
+  // gFabricCanvas.add(rect);
+
   // create a circle
   var circle = new fabric.Circle({
-    radius: 300,
+    radius: 50,
     fill: "#333333",
-    left: 10,
-    top: 10,
+    left: 50,
+    top: 50,
   });
 
   circle.setGradient("fill", {
@@ -62,12 +72,44 @@ function fabricInit() {
   });
 
   gFabricCanvas.add(circle);
+
+  //test:groen-rode-kader-hendels
+  // gFabricCanvas.item(0).set({
+  //   borderColor: "red",
+  //   cornerColor: "green",
+  //   cornerSize: 6,
+  //   transparentCorners: false,
+  // });
+
+  // gFabricCanvas.setActiveObject(gFabricCanvas.item(0));
+
+  // gradients
+
+  //afbeelding
+  // fabric.Image.fromURL("img/russian-blue-sunglasses.jpg", function (oImg) {
+  //   oImg.scale(0.5);
+  //   gFabricCanvas.add(oImg);
+  // });
+
+  //test: text with background
+  //   var text = "merci\nbedankt\nthankyou";
+  //   var textWithBackground = new fabric.Text(text, {
+  //     left: 100,
+  //     top: 100,
+  //     fontFamily: "Kosugi",
+  //     fontSize: 17,
+  //     textBackgroundColor: "rgb(0,205,0)",
+  //     stroke: "rgb(205, 0, 0)",
+  //     strokeWidth: 0.5,
+  //   });
+  //   // gFabricCanvas.add(text);
+  //   gFabricCanvas.add(textWithBackground);
 }
 
 //
 function commonInit() {
-  gWidth = gFabricCanvas.width;
-  gHeight = gFabricCanvas.height;
+  gWidth = gSourceEl.width;
+  gHeight = gSourceEl.height;
   gStride = gWidth * 4;
   gSizeInBytes = gWidth * gHeight * 4;
   gDitherCanvas.width = gWidth;

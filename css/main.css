@@ -32,6 +32,7 @@ img {
 
 .library img {
   margin-bottom: 10px;
+  background: yellow;
 }
 
 /*canvassen*/
