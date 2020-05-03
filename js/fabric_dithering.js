@@ -34,7 +34,9 @@ const OFFSETS = [
 ];
 
 function fabricInit() {
-  gFabricCanvas = new fabric.Canvas("fabric-canvas");
+  gFabricCanvas = new fabric.Canvas("fabric-canvas", {
+    backgroundColor: "rgb(255, 255, 255)",
+  });
 
   // create a circle
   var circle = new fabric.Circle({
@@ -163,7 +165,7 @@ function onMouseUp(e) {
   window.removeEventListener("mouseup", onMouseUp);
 }
 
-const ZOOM_SPEED = 1.02;
+const ZOOM_SPEED = 1.1;
 
 function onMouseWheel(e) {
   e.preventDefault();
@@ -208,6 +210,17 @@ function onMouseWheel(e) {
 draw();
 gDitherCanvas.addEventListener("mousedown", onMouseDown);
 gDitherCanvas.addEventListener("wheel", onMouseWheel);
+
+//BAL-library
+document.querySelectorAll(".library img").forEach((el) => {
+  el.addEventListener("click", () => {
+    fabric.Image.fromURL(el.src, (img) => {
+      img.scale(0.2);
+      img.set({ left: 100, top: 100 });
+      gFabricCanvas.add(img);
+    });
+  });
+});
 
 //"remove image"-key
 window.addEventListener("keydown", (e) => {

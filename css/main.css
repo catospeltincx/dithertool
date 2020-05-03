@@ -1,14 +1,8 @@
 body {
   min-height: 100vh;
-  background-color: white;
+  background-color: black;
   /* background: no-repeat */
   /* linear-gradient(180deg, #fed7e2 0%, #fff5f7 20%, #fff5f7 100%); */
-}
-
-canvas {
-  max-width: 100%;
-  max-height: auto;
-  border: 1px solid blue;
 }
 
 img {
@@ -18,11 +12,10 @@ img {
 /*library*/
 .wrapper {
   display: flex;
-  justify-content: space-between;
 }
 
 .library {
-  margin: 0px 10px 0px 10px;
+  margin: 0px 50px 0px 0px;
   display: flex;
   flex-direction: column;
   width: 150px;
@@ -32,19 +25,16 @@ img {
 
 .library img {
   margin-bottom: 10px;
-  background: yellow;
 }
 
 /*canvassen*/
-#fabric-canvas {
-  width: 200px;
-  height: auto;
+canvas {
+  border: 1px solid blue;
 }
 
-/* .dither-canvas {
-  width: 400px !important;
-  height: 500px !important;
-} */
+.canvas-container {
+  margin: 0px 50px 0px 0px;
+}
 
 .canvassen {
   display: flex;
