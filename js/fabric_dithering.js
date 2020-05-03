@@ -265,6 +265,15 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
+//save as
+$("#b").click(function () {
+  $("#dither-canvas")
+    .get(0)
+    .toBlob(function (blob) {
+      saveAs(blob, "IMG.png");
+    });
+});
+
 function animate() {
   jsDither();
   if (gPlaying) {

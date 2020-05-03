@@ -12,6 +12,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
+    <header>
+      <h1>dither tool</h1>
+    </header>
     <main>
       <div class="wrapper">
         <div class="library">
@@ -26,7 +29,7 @@
           <img src="img/foto19.jpg" />
         </div>
 
-      
+
 
       <div class="canvassen">
 
@@ -39,16 +42,18 @@
           ></canvas>
 
           <!-- dither canvas -->
-          <canvas 
-          class="border" 
+         <canvas
+          class="border"
           id="dither-canvas"
           ></canvas>
-    
+      <input id="b" type="button" value="save">
+
       </div>
     </div>
     </div>
     </main>
     <script src="js/fabric.min.js"></script>
     <script src="js/fabric_dithering.js"></script>
+    <script src="FileSaver.min.js"></script>
   </body>
 </html>
