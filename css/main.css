@@ -35,18 +35,17 @@ img {
 }
 
 /*canvassen*/
-.fabric-canvas {
-  width: 400px !important;
-  height: 500px !important;
+#fabric-canvas {
+  width: 600px;
+  height: auto;
 }
 
-.dither-canvas {
+/* .dither-canvas {
   width: 400px !important;
   height: 500px !important;
-}
+} */
 
 .canvassen {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }

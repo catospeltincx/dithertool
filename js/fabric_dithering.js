@@ -1,5 +1,5 @@
 let gFabricCanvas;
-const gCanvas = document.getElementById("dither-canvas");
+const gDitherCanvas = document.getElementById("dither-canvas");
 //const gCtx = gCanvas.getContext("2d");
 let gWidth, gHeight, gStride, gSizeInBytes;
 let gPlaying = true;
@@ -7,20 +7,10 @@ let gSourceEl = document.getElementById("fabric-canvas");
 
 //zoom
 // const gCanvas = document.querySelector("#dither-canvas");
-const gCtx = gCanvas.getContext("2d");
+const gCtx = gDitherCanvas.getContext("2d");
 let gZoom = 1;
 let gX = 0;
 let gY = 0;
-
-// function clamp(v, min, max) {
-//   if (v < min) {
-//     return min;
-//   } else if (v > max) {
-//     return max;
-//   } else {
-//     return v;
-//   }
-// }
 
 //kleur -> zwart/wit maken
 function brightness(r, g, b) {
@@ -44,7 +34,9 @@ const OFFSETS = [
 ];
 
 function fabricInit() {
-  gFabricCanvas = new fabric.Canvas("fabric-canvas");
+  gFabricCanvas = new fabric.Canvas("fabric-canvas", {
+    width: 400,
+  });
 
   // create a circle
   var circle = new fabric.Circle({
@@ -72,13 +64,14 @@ function fabricInit() {
   gFabricCanvas.add(circle);
 }
 
+//
 function commonInit() {
-  gWidth = gSourceEl.width;
-  gHeight = gSourceEl.height;
+  gWidth = gFabricCanvas.width;
+  gHeight = gFabricCanvas.height;
   gStride = gWidth * 4;
   gSizeInBytes = gWidth * gHeight * 4;
-  gCanvas.width = gWidth;
-  gCanvas.height = gHeight;
+  gDitherCanvas.width = gWidth;
+  gDitherCanvas.height = gHeight;
 }
 
 function jsDither() {
@@ -139,7 +132,7 @@ function jsDither() {
 //ZOOM-functie
 function draw() {
   gCtx.setTransform(1, 0, 0, 1, 0, 0);
-  gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
+  gCtx.clearRect(0, 0, gDitherCanvas.width, gDitherCanvas.height);
 
   gCtx.save();
   // s
@@ -181,8 +174,8 @@ function onMouseWheel(e) {
   newZoom = clamp(newZoom, 0.1, 100.0);
   const zoomDelta = gZoom - newZoom;
   console.log(zoomDelta);
-  const halfWidth = gCanvas.width / 2;
-  const halfHeight = gCanvas.height / 2;
+  const halfWidth = gDitherCanvas.width / 2;
+  const halfHeight = gDitherCanvas.height / 2;
   const k = newZoom / gZoom;
   // gX = halfWidth - k * (halfWidth - gX);
   // gY = halfHeight - k * (halfHeight - gY);
@@ -215,19 +208,8 @@ function onMouseWheel(e) {
 }
 
 draw();
-gCanvas.addEventListener("mousedown", onMouseDown);
-gCanvas.addEventListener("wheel", onMouseWheel);
-
-//BAL-library
-document.querySelectorAll(".library img").forEach((el) => {
-  el.addEventListener("click", () => {
-    fabric.Image.fromURL(el.src, (img) => {
-      img.scale(0.2);
-      img.set({ left: 100, top: 100 });
-      gFabricCanvas.add(img);
-    });
-  });
-});
+gDitherCanvas.addEventListener("mousedown", onMouseDown);
+gDitherCanvas.addEventListener("wheel", onMouseWheel);
 
 //"remove image"-key
 window.addEventListener("keydown", (e) => {
