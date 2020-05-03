@@ -1,11 +1,26 @@
 let gFabricCanvas;
 const gCanvas = document.getElementById("dither-canvas");
-const gCtx = gCanvas.getContext("2d");
+//const gCtx = gCanvas.getContext("2d");
 let gWidth, gHeight, gStride, gSizeInBytes;
 let gPlaying = true;
 let gSourceEl = document.getElementById("fabric-canvas");
 
-// From https://github.com/processing/processing/blob/master/core/src/processing/core/PGraphics.java
+//zoom
+// const gCanvas = document.querySelector("#dither-canvas");
+const gCtx = gCanvas.getContext("2d");
+let gZoom = 1;
+let gX = 0;
+let gY = 0;
+
+// function clamp(v, min, max) {
+//   if (v < min) {
+//     return min;
+//   } else if (v > max) {
+//     return max;
+//   } else {
+//     return v;
+//   }
+// }
 
 //kleur -> zwart/wit maken
 function brightness(r, g, b) {
@@ -31,22 +46,12 @@ const OFFSETS = [
 function fabricInit() {
   gFabricCanvas = new fabric.Canvas("fabric-canvas");
 
-  // create a rectangle object
-  // var rect = new fabric.Rect({
-  //   left: 100,
-  //   top: 100,
-  //   fill: "#666666",
-  //   width: 20,
-  //   height: 100,
-  // });
-  // gFabricCanvas.add(rect);
-
   // create a circle
   var circle = new fabric.Circle({
-    radius: 50,
+    radius: 300,
     fill: "#333333",
-    left: 50,
-    top: 50,
+    left: 10,
+    top: 10,
   });
 
   circle.setGradient("fill", {
@@ -65,38 +70,6 @@ function fabricInit() {
   });
 
   gFabricCanvas.add(circle);
-
-  //test:groen-rode-kader-hendels
-  // gFabricCanvas.item(0).set({
-  //   borderColor: "red",
-  //   cornerColor: "green",
-  //   cornerSize: 6,
-  //   transparentCorners: false,
-  // });
-
-  // gFabricCanvas.setActiveObject(gFabricCanvas.item(0));
-
-  // gradients
-
-  //afbeelding
-  // fabric.Image.fromURL("img/russian-blue-sunglasses.jpg", function (oImg) {
-  //   oImg.scale(0.5);
-  //   gFabricCanvas.add(oImg);
-  // });
-
-  //test: text with background
-  //   var text = "merci\nbedankt\nthankyou";
-  //   var textWithBackground = new fabric.Text(text, {
-  //     left: 100,
-  //     top: 100,
-  //     fontFamily: "Kosugi",
-  //     fontSize: 17,
-  //     textBackgroundColor: "rgb(0,205,0)",
-  //     stroke: "rgb(205, 0, 0)",
-  //     strokeWidth: 0.5,
-  //   });
-  //   // gFabricCanvas.add(text);
-  //   gFabricCanvas.add(textWithBackground);
 }
 
 function commonInit() {
@@ -163,19 +136,87 @@ function jsDither() {
   gCtx.putImageData(imageData, 0, 0);
 }
 
-//zoom WERKT NIET
-// gFabricCanvas.on("mouse:wheel", function (opt) {
-//   var delta = opt.e.deltaY;
-//   var zoom = canvas.getZoom();
-//   zoom = zoom + delta / 200;
-//   if (zoom > 20) zoom = 20;
-//   if (zoom < 0.01) zoom = 0.01;
-//   gFabricCanvas.setZoom(zoom);
-//   opt.e.preventDefault();
-//   opt.e.stopPropagation();
-// });
+//ZOOM-functie
+function draw() {
+  gCtx.setTransform(1, 0, 0, 1, 0, 0);
+  gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height);
 
-//save image WERKT NIET
+  gCtx.save();
+  // s
+  gCtx.translate(gX, gY);
+  gCtx.scale(gZoom, gZoom);
+  gCtx.fillStyle = "#ff9";
+  gCtx.fillRect(0, 0, 800, 600);
+  gCtx.fillStyle = "#696";
+  gCtx.fillRect(400 - 20, 300 - 20, 40, 40);
+
+  //gCtx.restore();
+}
+
+function onMouseDown(e) {
+  e.preventDefault();
+  window.addEventListener("mousemove", onMouseMove);
+  window.addEventListener("mouseup", onMouseUp);
+}
+
+function onMouseMove(e) {
+  e.preventDefault();
+  gX += e.movementX;
+  gY += e.movementY;
+  draw();
+}
+
+function onMouseUp(e) {
+  e.preventDefault();
+  window.removeEventListener("mousemove", onMouseMove);
+  window.removeEventListener("mouseup", onMouseUp);
+}
+
+const ZOOM_SPEED = 1.02;
+
+function onMouseWheel(e) {
+  e.preventDefault();
+  let newZoom = e.deltaY > 0 ? gZoom * ZOOM_SPEED : gZoom / ZOOM_SPEED;
+  //let newZoom = gZoom - e.deltaY * 0.005;
+  newZoom = clamp(newZoom, 0.1, 100.0);
+  const zoomDelta = gZoom - newZoom;
+  console.log(zoomDelta);
+  const halfWidth = gCanvas.width / 2;
+  const halfHeight = gCanvas.height / 2;
+  const k = newZoom / gZoom;
+  // gX = halfWidth - k * (halfWidth - gX);
+  // gY = halfHeight - k * (halfHeight - gY);
+  // gX = 0 - k * (0 - gX);
+  // gY = (0 - k) * (0 - gY);
+  //gX -= e.offsetX * (zoomDelta - 1);
+  //gY -= e.offsetY * (zoomDelta - 1);
+  // gX = gCanvas.width - k * (gCanvas.width - gX);
+  // gY = gCanvas.height - k * (gCanvas.height - gY);
+  // gX += halfWidth - e.offsetX * k;
+  // gY += halfHeight - e.offsetY * k;
+  //gY += k;
+  // gY = gY - k * gCanvas.height;
+  // gX -= e.offsetX - halfWidth;
+  // gY -= e.offsetX - halfWidth;
+  // halfWidth / zoom;
+  // const dx = -e.offsetX; // - gCanvas.width; // - halfWidth;
+  // const dy = -e.offsetY; // - gCanvas.height; // - halfHeight;
+  const dx = e.offsetX - halfWidth;
+  const dy = e.offsetY - halfHeight;
+  // gX = gX - dx / newZoom + dx / gZoom;
+  // gY = gY - dy / newZoom + dy / gZoom;
+  // gX += e.offsetX * zoomDelta;
+  // gY += e.offsetY * zoomDelta;
+  // gX = -(e.offsetX * newZoom - halfWidth);
+  // gY = -(e.offsetY * newZoom - halfHeight);
+  gZoom = newZoom;
+  console.log(gX, gY, gZoom, k);
+  draw();
+}
+
+draw();
+gCanvas.addEventListener("mousedown", onMouseDown);
+gCanvas.addEventListener("wheel", onMouseWheel);
 
 //BAL-library
 document.querySelectorAll(".library img").forEach((el) => {

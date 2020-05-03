@@ -8,6 +8,7 @@ body {
 canvas {
   max-width: 100%;
   max-height: auto;
+  border: 1px solid blue;
 }
 
 img {
@@ -31,18 +32,21 @@ img {
 
 .library img {
   margin-bottom: 10px;
-  background: yellow;
 }
 
 /*canvassen*/
 .fabric-canvas {
-  stroke: black;
-  stroke-width: 2px;
-  width: 400px;
-  height: 500px;
+  width: 400px !important;
+  height: 500px !important;
 }
 
-.grid {
-  grid-column: 2;
-  gap: 4;
+.dither-canvas {
+  width: 400px !important;
+  height: 500px !important;
+}
+
+.canvassen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
