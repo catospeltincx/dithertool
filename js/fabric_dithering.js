@@ -171,7 +171,7 @@ function onMouseWheel(e) {
   e.preventDefault();
   let newZoom = e.deltaY > 0 ? gZoom * ZOOM_SPEED : gZoom / ZOOM_SPEED;
   //let newZoom = gZoom - e.deltaY * 0.005;
-  newZoom = clamp(newZoom, 0.1, 100.0);
+  newZoom = clamp(newZoom, 0.1, 1000.0);
   const zoomDelta = gZoom - newZoom;
   console.log(zoomDelta);
   const halfWidth = gDitherCanvas.width / 2;
@@ -266,13 +266,26 @@ window.addEventListener("keydown", (e) => {
 });
 
 //save as
-$("#b").click(function () {
-  $("#dither-canvas")
-    .get(0)
-    .toBlob(function (blob) {
-      saveAs(blob, "IMG.png");
-    });
-});
+// $("#b").click(function () {
+//   $("#dither-canvas")
+//     .get(0)
+//     .toBlob(function (blob) {
+//       saveAs(blob, "IMG.png");
+//     });
+// });
+function onSave() {
+  gDitherCanvas.toBlob((blob) => {
+    const timestamp = Date.now().toString();
+    const a = document.createElement("a");
+    document.body.append(a);
+    a.download = "export-${timestamp}.png";
+    a.href = URL.createObjectURL(blob);
+    a.click();
+    a.remove();
+  });
+}
+
+document.querySelector("#save").addEventListener("click", onSave);
 
 function animate() {
   jsDither();
