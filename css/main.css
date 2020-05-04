@@ -30,6 +30,7 @@ img {
 /*canvassen*/
 canvas {
   border: 1px solid blue;
+  padding: 5px;
 }
 
 .canvas-container {
@@ -40,6 +41,8 @@ canvas {
   display: flex;
   flex-direction: row;
 }
+
+/* save button */
 
 .wrapper button {
   width: 50px;

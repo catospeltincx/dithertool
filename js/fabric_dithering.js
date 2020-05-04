@@ -211,7 +211,7 @@ draw();
 gDitherCanvas.addEventListener("mousedown", onMouseDown);
 gDitherCanvas.addEventListener("wheel", onMouseWheel);
 
-//BAL-library
+//library
 document.querySelectorAll(".library img").forEach((el) => {
   el.addEventListener("click", () => {
     fabric.Image.fromURL(el.src, (img) => {
@@ -265,14 +265,7 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-//save as
-// $("#b").click(function () {
-//   $("#dither-canvas")
-//     .get(0)
-//     .toBlob(function (blob) {
-//       saveAs(blob, "IMG.png");
-//     });
-// });
+//save as png
 function onSave() {
   gDitherCanvas.toBlob((blob) => {
     const timestamp = Date.now().toString();
@@ -286,6 +279,13 @@ function onSave() {
 }
 
 document.querySelector("#save").addEventListener("click", onSave);
+
+//resize canvas
+// var gDitherCanvas = document.getElementsByTagName("dither-canvas")[0];
+// gDitherCanvas.setWidth(100);
+// gDitherCanvas.setHeight(100);
+
+// gDitherCanvas.calcOffset();
 
 function animate() {
   jsDither();
