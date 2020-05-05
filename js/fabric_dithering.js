@@ -6,8 +6,16 @@ let gPlaying = true;
 let gSourceEl = document.getElementById("fabric-canvas");
 
 //zoom
-const gDitherCanvas = document.querySelector("#dither-canvas");
-const gCtx = gDitherCanvas.getContext("2d");
+const gDitherCanvas = document.createElement("canvas");
+//document.body.appendChild(gDitherCanvas);
+gDitherCanvas.width = gSourceEl.width;
+gDitherCanvas.height = gSourceEl.height;
+const gDitherCtx = gDitherCanvas.getContext("2d");
+
+// output canvas
+const gOutputCanvas = document.querySelector("#output-canvas");
+const gOutputCtx = gOutputCanvas.getContext("2d");
+
 let gZoom = 1;
 let gX = 0;
 let gY = 0;
@@ -75,10 +83,10 @@ function commonInit() {
 }
 
 function jsDither() {
-  gCtx.clearRect(0, 0, gWidth, gHeight);
+  gDitherCtx.clearRect(0, 0, gWidth, gHeight);
   //X, Y positie dither beeld
-  gCtx.drawImage(gSourceEl, 0, 0);
-  const imageData = gCtx.getImageData(0, 0, gWidth, gHeight);
+  gDitherCtx.drawImage(gSourceEl, 0, 0);
+  const imageData = gDitherCtx.getImageData(0, 0, gWidth, gHeight);
   const { data } = imageData;
   for (let x = 0; x < gWidth; x++) {
     for (let y = 0; y < gHeight; y++) {
@@ -126,22 +134,25 @@ function jsDither() {
       }
     }
   }
-  gCtx.putImageData(imageData, 0, 0);
+  gDitherCtx.putImageData(imageData, 0, 0);
 }
 
 //ZOOM-functie
 function draw() {
-  gCtx.setTransform(1, 0, 0, 1, 0, 0);
-  gCtx.clearRect(0, 0, gDitherCanvas.width, gDitherCanvas.height);
+  gOutputCtx.setTransform(1, 0, 0, 1, 0, 0);
+  gOutputCtx.clearRect(0, 0, gOutputCanvas.width, gOutputCanvas.height);
 
-  gCtx.save();
-  // s
-  gCtx.translate(gX, gY);
-  gCtx.scale(gZoom, gZoom);
-  gCtx.fillStyle = "#ff9";
-  gCtx.fillRect(0, 0, 800, 600);
-  gCtx.fillStyle = "#696";
-  gCtx.fillRect(400 - 20, 300 - 20, 40, 40);
+  gOutputCtx.save();
+  gOutputCtx.translate(gX, gY);
+  gOutputCtx.scale(gZoom, gZoom);
+
+  gOutputCtx.imageSmoothingEnabled = false;
+  gOutputCtx.drawImage(gDitherCanvas, 0, 0);
+
+  // gOutputCtx.fillStyle = "#f0f";
+  // gOutputCtx.fillRect(0, 0, 100, 200);
+  // gOutputCtx.fillStyle = "#696";
+  // gOutputCtx.fillRect(400 - 20, 300 - 20, 40, 40);
 
   //gCtx.restore();
 }
@@ -207,11 +218,6 @@ function onMouseWheel(e) {
   draw();
 }
 
-draw();
-gDitherCanvas.addEventListener("mousedown", onMouseDown);
-gDitherCanvas.addEventListener("wheel", onMouseWheel);
-
-//library
 document.querySelectorAll(".library img").forEach((el) => {
   el.addEventListener("click", () => {
     fabric.Image.fromURL(el.src, (img) => {
@@ -267,17 +273,26 @@ window.addEventListener("keydown", (e) => {
 
 //save as png
 function onSave() {
-  gDitherCanvas.toBlob((blob) => {
+  gOutputCanvas.toBlob((blob) => {
     const timestamp = Date.now().toString();
     const a = document.createElement("a");
     document.body.append(a);
-    a.download = "export-${timestamp}.png";
+    a.download = `export-${timestamp}.png`;
     a.href = URL.createObjectURL(blob);
     a.click();
     a.remove();
   });
 }
 
+function resetZoom() {
+  gZoom = 1;
+  gX = 0;
+  gY = 0;
+}
+
+gOutputCanvas.addEventListener("mousedown", onMouseDown);
+gOutputCanvas.addEventListener("wheel", onMouseWheel);
+gOutputCanvas.addEventListener("dblclick", resetZoom);
 document.querySelector("#save").addEventListener("click", onSave);
 
 //resize canvas
@@ -289,6 +304,7 @@ document.querySelector("#save").addEventListener("click", onSave);
 
 function animate() {
   jsDither();
+  draw();
   if (gPlaying) {
     requestAnimationFrame(animate);
   }
