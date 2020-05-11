@@ -45,31 +45,6 @@ function fabricInit() {
   gFabricCanvas = new fabric.Canvas("fabric-canvas", {
     backgroundColor: "rgb(255, 255, 255)",
   });
-
-  // create a circle
-  var circle = new fabric.Circle({
-    radius: 50,
-    fill: "#333333",
-    left: 50,
-    top: 50,
-  });
-
-  circle.setGradient("fill", {
-    x1: 0,
-    y1: 0,
-    x2: 0,
-    y2: circle.height,
-    colorStops: {
-      0: "#c7c7c7",
-      0.2: "#545454",
-      0.4: "#e0e0e0",
-      0.6: "#b0b0b0",
-      0.8: "#474747",
-      1: "#999999",
-    },
-  });
-
-  gFabricCanvas.add(circle);
 }
 
 //
