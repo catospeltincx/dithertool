@@ -1,12 +1,25 @@
 body {
   min-height: 100vh;
   background-color: white;
+  margin: 50px;
   /* background: no-repeat */
   /* linear-gradient(180deg, #fed7e2 0%, #fff5f7 20%, #fff5f7 100%); */
+  font-family: "Kosugi", sans-serif;
 }
 
 img {
   max-width: 100%;
+}
+
+/*header*/
+header {
+  color: red;
+}
+
+.introtekst p {
+  margin: 0px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
 }
 
 /*library*/
@@ -15,7 +28,7 @@ img {
 }
 
 .library {
-  margin: 0px 50px 0px 0px;
+  margin: 0px 10px 0px 0px;
   display: flex;
   flex-direction: column;
   width: 150px;
@@ -45,11 +58,13 @@ canvas {
 /* save button */
 
 .wrapper button {
-  width: 50px;
-  height: 25px;
-  background-color: tomato;
-  border: none;
+  width: 70px;
+  height: 30px;
+  background-color: red;
+  font-size: 1.1rem;
+  border: 1px dashed violet;
   cursor: pointer;
   padding: 0;
-  margin-left: 50px;
+  margin: 0px 50px 0px 25px;
+  font-family: "Kosugi", sans-serif;
 }
