@@ -1,8 +1,6 @@
 body {
   min-height: 100vh;
   background-color: white;
-  /* background: no-repeat */
-  /* linear-gradient(180deg, #fed7e2 0%, #fff5f7 20%, #fff5f7 100%); */
   font-family: "Kosugi", sans-serif;
 }
 
@@ -10,43 +8,73 @@ img {
   max-width: 100%;
 }
 
-a {
+p {
   color: red;
+  margin: 0px 0px 10px 0px;
+}
+
+/*popup*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
   text-decoration: none;
-  display: inline;
+  cursor: pointer;
 }
 
 /*header*/
-header {
-  color: red;
-}
-
 .introtekst p {
-  margin: 0px 0px 10px 0px;
   display: flex;
   flex-direction: column;
-}
-
-.linkzin {
-  display: inline-block;
 }
 
 /*library*/
-.wrapper {
+.wrapper2 {
   display: flex;
+  justify-content: center;
 }
 
-.library {
+.library__child {
   margin: 0px 10px 0px 0px;
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 100px;
   height: 810px;
   overflow-y: auto;
 }
 
-.library img {
-  margin-bottom: 10px;
+.library__child img {
+  margin-bottom: 20px;
 }
 
 /*canvassen*/
@@ -65,15 +93,13 @@ canvas {
 }
 
 /* save button */
-
-.wrapper button {
+.wrapper1 button {
   width: 70px;
   height: 30px;
   background-color: red;
   font-size: 1.1rem;
-  border: 1px dashed violet;
   cursor: pointer;
   padding: 0;
-  margin: 0px 50px 0px 25px;
+  margin: 0px 0px 10px 0px;
   font-family: "Kosugi", sans-serif;
 }

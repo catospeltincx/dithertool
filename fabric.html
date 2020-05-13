@@ -13,7 +13,12 @@
   </head>
   <body>
     <header>
-      <h1>titel</h1>
+      <button id="popUp">titel</button>
+      <div id ="myModal" class="modal"></div>
+      <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+      </div>
       <div class="introtekst">
       <p>This is a dither and zoom machine.</p>
       <p>Start to observe error diffusion patterns.</p>
@@ -21,8 +26,15 @@
       <p>This organised pixel chaos is formed by Atkinsons dither algorithm.</p>
     </header>
     <main>
-      <div class="wrapper">
-        <div class="library">
+
+      <div class="wrapper1">
+        <button id="upload">upload</button>
+        <button id="save">save</button>
+      </div>
+
+      <div class="wrapper2">
+        
+        <div class="library__child">
           <img src="img/object-01.png" />
           <img src="img/object-02.png" />
           <img src="img/object-03.png" />
@@ -30,8 +42,9 @@
           <img src="img/object-05.png" />
           <img src="img/object-06.png" />
         </div>
+      
 
-        <button id="upload">upload</button>
+      
       <div class="canvassen">
 
           <!-- gewone canvas -->
@@ -50,11 +63,14 @@
           height="800"
           ></canvas>
       </div>
-      <button id="save">save</button>
     </div>
-    </div>
+    <div class="wrapper3">
+      <p>drag, rotate, skew, scale, copy, paste, delete your uploaded image on this canvas.</p>
+      <p>zoom and look at the 1-bit translation of your uploaded image on this canvas. 
+        (refresh your perspective by double clicking)</p>
     </div>
     </main>
+    
     <script src="js/fabric.min.js"></script>
     <script src="js/fabric_dithering.js"></script>
   </body>
