@@ -1,7 +1,14 @@
 body {
-  min-height: 100vh;
-  background-color: white;
+  /* min-height: 100vh; */
+  background-color: gold;
   font-family: "Kosugi", sans-serif;
+  margin: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 200px 600px 50px 600px 100px;
+  grid-template-rows: 120px 50px 800px 50px;
 }
 
 img {
@@ -14,47 +21,24 @@ p {
 }
 
 /*header*/
-.introtekst p {
-  display: flex;
-  flex-direction: column;
+.titel {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 
-/*library*/
-.wrapper2 {
-  display: flex;
-  justify-content: center;
+header .introtekst {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
 }
 
-.library__child {
-  margin: 0px 10px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  height: 810px;
-  overflow-y: auto;
-}
+/*MAIN*/
 
-.library__child img {
-  margin-bottom: 20px;
-}
-
-/*canvassen*/
-canvas {
-  border: 1px solid blue;
-  padding: 5px;
-}
-
-.canvas-container {
-  margin: 0px 50px 0px 0px;
-}
-
-.canvassen {
-  display: flex;
-  flex-direction: row;
-}
-
-/* save button */
-.wrapper1 button {
+/*buttons*/
+button {
   width: 70px;
   height: 30px;
   background-color: red;
@@ -63,4 +47,71 @@ canvas {
   padding: 0;
   margin: 0px 0px 10px 0px;
   font-family: "Kosugi", sans-serif;
+  border: none;
+}
+
+#upload {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#save {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+/*library*/
+.library {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 810px;
+  overflow-y: auto;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  align-self: center;
+}
+
+.library img {
+  margin-bottom: 20px;
+}
+
+/*canvassen*/
+canvas {
+  border: 1px solid blue;
+  padding: 5px;
+}
+.fabric-canvas {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.output-canvas {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+/* instructies */
+.instructie__fabric {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+
+.instructie__dither {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 6;
 }

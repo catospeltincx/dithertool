@@ -12,60 +12,61 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
-    <header>
-      <p>titel</p>
-      <div class="introtekst">
-      <p>This is a dither and zoom machine.</p>
-      <p>Start to observe error diffusion patterns.</p>
-      <p>Upload an image and go through their 1-bit translation.</p>
-      <p>This organised pixel chaos is formed by Atkinsons dither algorithm.</p>
-    </header>
-    <main>
+    <div class="grid">
+      <!-- HEADER -->
 
-      <div class="wrapper1">
-        <button id="upload">upload</button>
-        <button id="save">save</button>
+      <p class="titel">titel</p>
+
+      <header class="introtekst">
+        <p>This is a dither and zoom machine.</p>
+        <p>Start to observe error diffusion patterns.</p>
+        <p>Upload an image and go through their 1-bit translation.</p>
+        <p>
+          This organised pixel chaos is formed by Atkinsons dither algorithm.
+        </p>
+      </header>
+
+      <!-- MAIN -->
+
+      <button id="upload">upload</button>
+
+      <button id="save">save</button>
+
+      <div class="library">
+        <img src="img/object-01.png" />
+        <img src="img/object-02.png" />
+        <img src="img/object-03.png" />
+        <img src="img/object-04.png" />
+        <img src="img/object-05.png" />
+        <img src="img/object-06.png" />
       </div>
 
-      <div class="wrapper2">
-        
-        <div class="library__child">
-          <img src="img/object-01.png" />
-          <img src="img/object-02.png" />
-          <img src="img/object-03.png" />
-          <img src="img/object-04.png" />
-          <img src="img/object-05.png" />
-          <img src="img/object-06.png" />
-        </div>
-      
+      <canvas
+        class="fabric-canvas"
+        id="fabric-canvas"
+        width="600"
+        height="800"
+        style="display: grid;"
+      ></canvas>
 
-      
-      <div class="canvassen">
+      <canvas
+        class="border"
+        id="output-canvas"
+        width="600"
+        height="800"
+        style="display: grid;"
+      ></canvas>
 
-          <!-- gewone canvas -->
-          <canvas
-            class="fabric-canvas"
-            id="fabric-canvas"
-            width="600"
-            height="800"
-          ></canvas>
+      <p class="instructie__fabric">
+        drag, rotate, skew, scale, copy, paste, delete your uploaded image on
+        this canvas.
+      </p>
 
-          <!-- dither canvas -->
-         <canvas
-          class="border"
-          id="output-canvas"
-          width="600"
-          height="800"
-          ></canvas>
-      </div>
+      <p class="instructie__dither">
+        zoom and look at the 1-bit translation of your uploaded image on this
+        canvas. (refresh your perspective by double clicking)
+      </p>
     </div>
-    <div class="wrapper3">
-      <p>drag, rotate, skew, scale, copy, paste, delete your uploaded image on this canvas.</p>
-      <p>zoom and look at the 1-bit translation of your uploaded image on this canvas. 
-        (refresh your perspective by double clicking)</p>
-    </div>
-    </main>
-    
     <script src="js/fabric.min.js"></script>
     <script src="js/fabric_dithering.js"></script>
   </body>
