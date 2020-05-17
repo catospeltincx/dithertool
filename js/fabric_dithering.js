@@ -233,6 +233,15 @@ function onSave() {
   });
 }
 
+//upload image
+const realFileBtn = document.getElementById("real-file");
+const customBtn = document.getElementById("upload");
+
+customBtn.addEventListener("click", function () {
+  realFileBtn.click();
+  gFabricCanvas.add(img);
+});
+
 function resetZoom() {
   gZoom = 1;
   gX = 0;
