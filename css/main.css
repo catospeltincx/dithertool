@@ -3,29 +3,41 @@ body {
   background-color: rgb(238, 238, 238);
   font-family: "Kosugi", sans-serif;
   margin: 40px;
+  font-size: 15px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 200px 600px 50px 600px 200px;
   grid-template-rows: 120px 50px 780px;
+  justify-content: center;
 }
 
 img {
   max-width: 100%;
 }
 
-p {
+.introtekst p {
   color: red;
   margin: 0px 0px 10px 0px;
 }
 
-/*header*/
-.titel {
+/*HEADER*/
+
+/*titel*/
+#modal-open-button {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-family: "Kosugi", sans-serif;
+  background-color: yellow;
+  color: red;
+  border: none;
+  margin: 0;
+  font-size: 20px;
 }
 
 header {
@@ -39,17 +51,21 @@ header {
 
 /*buttons*/
 button {
-  width: 70px;
-  height: 30px;
+  width: 100px;
+  height: 60px;
   color: black;
   background-color: white;
-  font-size: 1.1rem;
+  font-size: 15px;
   cursor: pointer;
   padding: 0;
   margin: 0px 0px 10px 0px;
   font-family: "Kosugi", sans-serif;
   border: none;
   box-shadow: 5px 7px red;
+}
+
+button p {
+  margin: 5px 0px 0px 0px;
 }
 
 #upload {
@@ -61,12 +77,11 @@ button {
   margin: 0px 0px 35px 35px;
 }
 
-#save {
+.save_slider {
   grid-column-start: 5;
   grid-column-end: 6;
   grid-row-start: 2;
   grid-row-end: 3;
-  justify-self: center;
 }
 
 /*library*/
@@ -75,7 +90,7 @@ button {
   display: flex;
   flex-direction: column;
   width: 100px;
-  height: 810px;
+  height: 700px;
   overflow-y: auto;
   grid-column-start: 1;
   grid-column-end: 2;
@@ -133,4 +148,12 @@ canvas {
 
 #popup-content #modal-close-button {
   text-align: right;
+}
+
+/*werkend voor ook andere schermen maken*/
+
+@media (max-width: 1600px) {
+  .introtekst p {
+    color: green;
+  }
 }
