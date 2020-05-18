@@ -5,6 +5,8 @@ let gWidth, gHeight, gStride, gSizeInBytes;
 let gPlaying = true;
 let gSourceEl = document.getElementById("fabric-canvas");
 
+let gDitherBrightness = 127;
+
 //zoom
 const gDitherCanvas = document.createElement("canvas");
 //document.body.appendChild(gDitherCanvas);
@@ -45,12 +47,14 @@ function fabricInit() {
   gFabricCanvas = new fabric.Canvas("fabric-canvas", {
     backgroundColor: "rgb(255, 255, 255)",
   });
+
+  //gFabricCanvas.add(rect);
 }
 
 //
 function commonInit() {
-  gWidth = gSourceEl.width;
-  gHeight = gSourceEl.height;
+  gWidth = gSourceEl.width / devicePixelRatio;
+  gHeight = gSourceEl.height / devicePixelRatio;
   gStride = gWidth * 4;
   gSizeInBytes = gWidth * gHeight * 4;
   gDitherCanvas.width = gWidth;
@@ -60,7 +64,7 @@ function commonInit() {
 function jsDither() {
   gDitherCtx.clearRect(0, 0, gWidth, gHeight);
   //X, Y positie dither beeld
-  gDitherCtx.drawImage(gSourceEl, 0, 0);
+  gDitherCtx.drawImage(gSourceEl, 0, 0, gWidth, gHeight);
   const imageData = gDitherCtx.getImageData(0, 0, gWidth, gHeight);
   const { data } = imageData;
   for (let x = 0; x < gWidth; x++) {
@@ -74,7 +78,7 @@ function jsDither() {
       const bright = brightness(r, g, b);
       let err;
       //brightness, standaar op 127= 255/2 -> zwart = wit
-      if (bright <= 127) {
+      if (bright <= gDitherBrightness) {
         //dikke vlakken: één lijn code weg = kleur, alles weg = grijs
         data[pos + 0] = 0x00;
         data[pos + 1] = 0x00;
@@ -167,7 +171,7 @@ function onMouseWheel(e) {
   draw();
 }
 
-document.querySelectorAll(".library__child img").forEach((el) => {
+document.querySelectorAll(".library img").forEach((el) => {
   el.addEventListener("click", () => {
     fabric.Image.fromURL(el.src, (img) => {
       img.scale(0.2);
@@ -239,7 +243,18 @@ const customBtn = document.getElementById("upload");
 
 customBtn.addEventListener("click", function () {
   realFileBtn.click();
-  gFabricCanvas.add(img);
+});
+
+realFileBtn.addEventListener("change", (e) => {
+  console.log(e.target.files);
+
+  const file = e.target.files[0];
+  const url = URL.createObjectURL(file);
+  fabric.Image.fromURL(url, (img) => {
+    img.scale(0.2);
+    img.set({ left: 100, top: 100 });
+    gFabricCanvas.add(img);
+  });
 });
 
 //pop-up
@@ -292,6 +307,10 @@ gOutputCanvas.addEventListener("mousedown", onMouseDown);
 gOutputCanvas.addEventListener("wheel", onMouseWheel);
 gOutputCanvas.addEventListener("dblclick", resetZoom);
 document.querySelector("#save").addEventListener("click", onSave);
+
+document.querySelector("#slider-brightness").addEventListener("input", (e) => {
+  gDitherBrightness = parseInt(e.target.value);
+});
 
 //resize canvas
 // var gDitherCanvas = document.getElementsByTagName("dither-canvas")[0];
