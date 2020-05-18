@@ -1,6 +1,6 @@
 body {
   /* min-height: 100vh; */
-  background-color: rgb(85, 41, 33);
+  background-color: rgb(238, 238, 238);
   font-family: "Kosugi", sans-serif;
   margin: 40px;
 }
@@ -89,6 +89,10 @@ button {
 }
 
 /*canvassen*/
+canvas {
+  border: 1px solid red;
+}
+
 .canvas-container {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -116,4 +120,17 @@ button {
   grid-column-end: 5;
   grid-row-start: 5;
   grid-row-end: 6;
+}
+
+/* pop-up */
+#popup-content {
+  background-color: seagreen;
+  display: none;
+  max-width: 600px;
+  position: fixed;
+  z-index: 1002;
+}
+
+#popup-content #modal-close-button {
+  text-align: right;
 }
