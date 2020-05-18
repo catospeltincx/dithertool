@@ -1,6 +1,6 @@
 body {
   /* min-height: 100vh; */
-  background-color: rgb(238, 238, 238);
+  background-color: #f6f7ef;
   font-family: "Kosugi", sans-serif;
   margin: 40px;
   font-size: 15px;
@@ -8,8 +8,8 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: 200px 600px 50px 600px 200px;
-  grid-template-rows: 120px 50px 780px;
+  grid-template-columns: 200px 600px 50px 620px;
+  grid-template-rows: 100px 20px 88px 690px 20px auto;
   justify-content: center;
 }
 
@@ -18,8 +18,11 @@ img {
 }
 
 .introtekst p {
-  color: red;
   margin: 0px 0px 10px 0px;
+}
+
+.introtekst {
+  margin: 0px 0px 0px 35px;
 }
 
 /*HEADER*/
@@ -54,39 +57,51 @@ button {
   width: 100px;
   height: 60px;
   color: black;
-  background-color: white;
+  background-color: #70ace8;
   font-size: 15px;
   cursor: pointer;
   padding: 0;
   margin: 0px 0px 10px 0px;
   font-family: "Kosugi", sans-serif;
   border: none;
-  box-shadow: 5px 7px red;
+  box-shadow: 7px 7px red;
 }
 
 button p {
   margin: 5px 0px 0px 0px;
 }
 
+#save {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin: 0px 0px 0px 35px;
+}
+
+.slider {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  margin: 0px 0px 0px 35px;
+}
+
+#slider-brightness {
+}
+
 #upload {
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  align-self: center;
-  margin: 0px 0px 35px 35px;
-}
-
-.save_slider {
-  grid-column-start: 5;
-  grid-column-end: 6;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  margin: 0px 0px 0px 35px;
 }
 
 /*library*/
+
 .library {
-  margin: 10px 0px 0px 25px;
+  margin: 0px 0px 0px 39px;
   display: flex;
   flex-direction: column;
   width: 100px;
@@ -94,9 +109,8 @@ button p {
   overflow-y: auto;
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  align-self: center;
+  grid-row-start: 4;
+  grid-row-end: 5;
 }
 
 .library img {
@@ -105,44 +119,66 @@ button p {
 
 /*canvassen*/
 canvas {
-  border: 1px solid red;
+  border: 1px solid black;
 }
 
 .canvas-container {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-end: 5;
 }
 
 .border {
   grid-column-start: 4;
   grid-column-end: 5;
   grid-row-start: 2;
-  grid-row-end: 4;
+  grid-row-end: 5;
 }
 
 /* instructies */
-.instructie__fabric {
+.instructie__fabric1 {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 5;
   grid-row-end: 6;
 }
+.instructie__fabric2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 6;
+  grid-row-end: 7;
+}
 
-.instructie__dither {
+.instructie__dither1 {
   grid-column-start: 4;
   grid-column-end: 5;
   grid-row-start: 5;
   grid-row-end: 6;
 }
 
+.instructie__dither2 {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 6;
+  grid-row-end: 7;
+}
+
 /* pop-up */
+.popup_titel {
+  font-family: kosugi;
+  font-style: normal;
+}
+
 #popup-content {
   background-color: seagreen;
   display: none;
   max-width: 600px;
   position: fixed;
+  margin: 0px 0px 5px 0px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.1rem;
   z-index: 1002;
 }
 

@@ -23,9 +23,10 @@
       />
 
       <header class="introtekst">
-        <p>
+        <p>This is a dither and zoom machine.</p>
+        <!-- <p>
           Upload an image and go through their 1-bit translation.
-        </p>
+        </p> -->
         <p>Your new hobby will be observing error diffusion patterns.</p>
         <p>
           This organised pixel chaos is formed by Atkinsons dither algorithm.
@@ -39,11 +40,13 @@
         <p>JPG-PNG</p>
       </button>
 
-      <div class="save_slider">
-        <button id="save">
-          <p>save</p>
-          <p>as PNG</p>
-        </button>
+      <button id="save">
+        <p>save</p>
+        <p>as PNG</p>
+      </button>
+
+      <div class="slider">
+        <p>brightness</p>
         <input
           type="range"
           name="brightness"
@@ -87,20 +90,25 @@
         style="display: grid;"
       ></canvas>
 
-      <p class="instructie__fabric">
-        drag, rotate, skew, scale, copy, paste, delete your uploaded image on
-        this canvas.
+      <p class="instructie__fabric1">
+        Drag, rotate, skew, scale, copy,
+      </p>
+      <p class="instructie__fabric2">
+        delete your uploaded image on this canvas.
       </p>
 
-      <p class="instructie__dither">
-        zoom and look at the 1-bit translation of your uploaded image on this
-        canvas. (refresh your perspective by double clicking)
+      <p class="instructie__dither1">
+        Zoom and explore the 1-bit translation
+      </p>
+
+      <p class="instructie__dither2">
+        of your uploaded image on this canvas.
       </p>
 
       <!-- Popup content -->
       <div id="popup-content">
         <div>
-          <p>??? DITHERING ???</p>
+          <p class="popup_titel">WHAT IS DITHERING?</p>
           <p>
             In the 1980’s computers had 1-bit displays. In reference to images
             ‘bits’ refer to the number of tonal variation of a color. This means
