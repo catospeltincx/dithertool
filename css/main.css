@@ -189,7 +189,4 @@ canvas {
 /*werkend voor ook andere schermen maken*/
 
 @media (max-width: 1600px) {
-  .introtekst p {
-    color: green;
-  }
 }
