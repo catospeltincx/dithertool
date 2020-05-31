@@ -16,7 +16,7 @@
     <div class="grid">
       <!-- HEADER -->
 
-      <p class="titel">DITHROSCOOP</p>
+      <p class="titel">DITHEROSCOOP</p>
       <input
         id="modal-open-button"
         type="button"
@@ -77,13 +77,16 @@
           min="0"
           max="254"
         />
+
+        <p>error</p>
+        <input type="range" name="error" id="slider-error" min="0" max="2" />
       </div>
 
       <div class="canvassen">
         <canvas
           class="fabric-canvas"
           id="fabric-canvas"
-          width="592"
+          width="600"
           height="800"
           style="display: grid;"
         ></canvas>
@@ -91,7 +94,7 @@
         <canvas
           class="border"
           id="output-canvas"
-          width="592"
+          width="600"
           height="800"
           style="display: grid;"
         ></canvas>

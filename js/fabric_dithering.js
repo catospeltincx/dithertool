@@ -6,7 +6,7 @@ let gPlaying = true;
 let gSourceEl = document.getElementById("fabric-canvas");
 
 let gDitherBrightness = 127;
-
+let gDitherError = 0.18;
 //zoom
 const gDitherCanvas = document.createElement("canvas");
 //document.body.appendChild(gDitherCanvas);
@@ -104,7 +104,7 @@ function jsDither() {
 
           let bright2 = brightness(r2, g2, b2);
           //up = more noise
-          bright2 += err * 0.18;
+          bright2 += err * gDitherError;
           // bright2 = clamp(bright2, 0, 255);
           data[pos2 + 0] = bright2;
           data[pos2 + 1] = bright2;
@@ -260,7 +260,7 @@ realFileBtn.addEventListener("change", (e) => {
 //pop-up
 $(document).ready(function () {
   console.log("JQUERY IS READY!");
-  $("#modal-open-button").click(function (e) {
+  $("#modal-open-button").hover(function (e) {
     console.log('$("#modal-open-button").click');
     openPopup();
   });
@@ -308,8 +308,14 @@ gOutputCanvas.addEventListener("wheel", onMouseWheel);
 gOutputCanvas.addEventListener("dblclick", resetZoom);
 document.querySelector("#save").addEventListener("click", onSave);
 
+//SLIDERS
+
 document.querySelector("#slider-brightness").addEventListener("input", (e) => {
   gDitherBrightness = parseInt(e.target.value);
+});
+
+document.querySelector("#slider-error").addEventListener("input", (e) => {
+  gDitherError = parseInt(e.target.value);
 });
 
 //resize canvas

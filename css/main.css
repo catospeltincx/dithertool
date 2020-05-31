@@ -1,7 +1,6 @@
 body {
   /* min-height: 100vh; */
   background-color: whitesmoke;
-  font-family: "Kosugi", sans-serif;
   margin: 40px;
   font-size: 15px;
 }
@@ -9,7 +8,7 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 200px 1230px 200px;
-  grid-template-rows: 50px 801px 100px;
+  grid-template-rows: 30px 801px 100px;
   grid-template-areas:
     "header1 header2 header3"
     "library canvasses slider"
@@ -32,16 +31,14 @@ img {
 /*HEADER*/
 
 .titel {
-  grid-area: header1;
+  grid-area: header2;
 }
 
 #modal-open-button {
   grid-area: header3;
   cursor: pointer;
-  -webkit-appearance: none;
-  font-family: "Kosugi", sans-serif;
+  /* -webkit-appearance: none; */
   border: none;
-  font-size: 20px;
   width: fit-content;
   height: fit-content;
 }
@@ -50,17 +47,11 @@ img {
 
 /*buttons*/
 button {
-  width: 100px;
-  height: 60px;
+  width: fit-content;
+  height: fit-content;
   color: black;
-  background-color: #70ace8;
-  font-size: 15px;
   cursor: pointer;
-  padding: 0;
-  margin: 0px 0px 10px 0px;
-  font-family: "Kosugi", sans-serif;
   border: none;
-  box-shadow: 7px 7px red;
 }
 
 button p {
@@ -78,18 +69,60 @@ button p {
   display: flex;
   flex-direction: column;
   margin-left: 35px;
+  margin-top: 100px;
+  max-width: 130px;
+}
+
+/*STYLING SLIDER*/
+input[type="range"] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 25px;
+  width: 1px;
+  border-radius: 10px;
+  background: black;
+  cursor: pointer;
+  margin-top: -12px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  background: #000000;
+  cursor: pointer;
+  border-radius: 1.3px;
 }
 
 /*library*/
-.library_wrap {
-  grid-area: l;
-}
 
 #upload {
   grid-area: library;
 }
 
 .library {
+  grid-area: library;
   display: flex;
   flex-direction: column;
   width: 100px;
@@ -141,15 +174,14 @@ button p {
 
 #popup-content #modal-close-button {
   text-align: right;
+  background-color: none;
+  border: none;
+  color: black;
 }
 
 /*werkend voor ook andere schermen maken*/
 
 @media (max-width: 1700px) {
-  .titel {
-    grid-area: header2;
-  }
-
   #upload {
     grid-area: header2;
     margin-left: 486px;
@@ -172,12 +204,12 @@ button p {
     flex-direction: row;
     width: 600px;
     overflow-x: auto;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   .library img {
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 50px;
+    max-width: 50px;
     margin-right: 20px;
   }
 
