@@ -7,7 +7,7 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: 200px 1230px 200px;
+  grid-template-columns: 150px 1230px 150px;
   grid-template-rows: 30px 801px 100px;
   grid-template-areas:
     "header1 header2 header3"
@@ -112,7 +112,6 @@ input[type="range"]::-webkit-slider-runnable-track {
   height: 1px;
   background: #000000;
   cursor: pointer;
-  border-radius: 1.3px;
 }
 
 /*library*/
@@ -179,9 +178,13 @@ input[type="range"]::-webkit-slider-runnable-track {
   color: black;
 }
 
+.notice {
+  display: none;
+}
+
 /*werkend voor ook andere schermen maken*/
 
-@media (max-width: 1700px) {
+@media (max-width: 1600px) {
   #upload {
     grid-area: header2;
     margin-left: 486px;
@@ -219,5 +222,36 @@ input[type="range"]::-webkit-slider-runnable-track {
     margin-left: 640px;
     max-width: 100px;
     margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 1px;
+    border-radius: 10px;
+    background: black;
+    cursor: pointer;
+    margin-top: -13px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 1200px) {
+  .notice {
+    display: block;
+    padding: 50px;
+  }
+
+  .grid {
+    display: none;
   }
 }
