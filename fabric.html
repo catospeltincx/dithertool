@@ -16,47 +16,34 @@
     <div class="grid">
       <!-- HEADER -->
 
+      <p class="titel">DITHROSCOOP</p>
       <input
         id="modal-open-button"
         type="button"
-        value="DITHRINSPECTOR"
+        value="???"
         style="margin: 0;"
       />
 
-      <header class="introtekst">
+      <!-- <header class="introtekst">
         <p>This is a dither and zoom machine.</p>
         <!-- <p>
           Upload an image and go through their 1-bit translation.
-        </p> -->
+        </p>
         <p>Your new hobby will be observing error diffusion patterns.</p>
         <p>
           This organised pixel chaos is formed by Bill Atkinsons dither
           algorithm.
         </p>
-      </header>
+      </header> -->
 
-      <!-- MAIN -->
-      <input type="file" id="real-file" hidden="hidden" />
       <button id="upload">
         <p>upload</p>
         <p>JPG-PNG</p>
       </button>
 
-      <button id="save">
-        <p>save</p>
-        <p>as PNG</p>
-      </button>
+      <!-- MAIN -->
 
-      <div class="slider">
-        <p>brightness</p>
-        <input
-          type="range"
-          name="brightness"
-          id="slider-brightness"
-          min="0"
-          max="254"
-        />
-      </div>
+      <input type="file" id="real-file" hidden="hidden" />
 
       <div class="library">
         <img src="img/object-01.png" />
@@ -76,23 +63,41 @@
         <img src="img/object-15.png" />
       </div>
 
-      <canvas
-        class="fabric-canvas"
-        id="fabric-canvas"
-        width="592"
-        height="800"
-        style="display: grid;"
-      ></canvas>
+      <button id="save">
+        <p>save</p>
+        <p>as PNG</p>
+      </button>
 
-      <canvas
-        class="border"
-        id="output-canvas"
-        width="592"
-        height="800"
-        style="display: grid;"
-      ></canvas>
+      <div class="slider">
+        <p>brightness</p>
+        <input
+          type="range"
+          name="brightness"
+          id="slider-brightness"
+          min="0"
+          max="254"
+        />
+      </div>
 
-      <p class="instructie__fabric1">
+      <div class="canvassen">
+        <canvas
+          class="fabric-canvas"
+          id="fabric-canvas"
+          width="592"
+          height="800"
+          style="display: grid;"
+        ></canvas>
+
+        <canvas
+          class="border"
+          id="output-canvas"
+          width="592"
+          height="800"
+          style="display: grid;"
+        ></canvas>
+      </div>
+
+      <!-- <p class="instructie__fabric1">
         Drag, rotate, skew, scale, copy,
       </p>
       <p class="instructie__fabric2">
@@ -105,7 +110,7 @@
 
       <p class="instructie__dither2">
         of your uploaded image on this canvas.
-      </p>
+      </p> -->
 
       <!-- Popup content -->
       <div id="popup-content">
