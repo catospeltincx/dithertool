@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cato Speltincx</title>
-    <link rel="shortcut icon" type="image/png" href="img/favicon3.png" />
+    <title>DITHEROSCOOP</title>
+    <!-- <link rel="shortcut icon" type="image/png" href="img/favicon3.png" /> -->
     <link rel="stylesheet" href="css/main.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Kosugi&display=swap"
@@ -17,6 +17,8 @@
       <!-- HEADER -->
 
       <p class="titel">DITHEROSCOOP</p>
+      
+      <button class="mail"><a href="mailto:cato.speltincx@telenet.be">please mail me your results</a></button>
 
       <!-- The overlay -->
       <div id="myNav" class="overlay">
@@ -27,6 +29,9 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
             >X</a
           >
+          <br />
+          <p class="tussentitel">How does this tool work?</p>
+          <p class="tussentitel">& What is dithering?</p>
           <br />
 
           <p class="introtekst">
@@ -44,9 +49,8 @@
           </p>
 
           <br />
-          <p class="tussentitel">How does this tool work?</p>
-          <br />
           
+          <p class="nummer">first:</p>
           <p>
             Upload one or more images. 
           </p>
@@ -57,6 +61,7 @@
           </video>
           <br>
           <br>
+          <p class="nummer">second:</p>
           <p>
             Drag, rotate, skew, scalee your image by  
           </p>
@@ -69,6 +74,7 @@
           </video>
           <br>
           <br>
+          <p class="nummer">after:</p>
           <p>
             CLICK (don't drag) on shapes and move 
           </p>
@@ -79,11 +85,13 @@
           <video  autoplay loop </video>>
             <source src="img/howto3.mov" type="video/mp4" />
           </video>
+          <br>
           <video  autoplay loop </video>>
             <source src="img/howto4.mov" type="video/mp4" />
           </video>
           <br>
           <br>
+          <p class="nummer">next:</p>
           <p>
             Zoom in with your mouse on the dither-canvas 
           </p>
@@ -97,49 +105,84 @@
             <source src="img/howto5.mov" type="video/mp4" />
           </video>
           <br>
-          
+          <br>
+          <p class="nummer">then:</p>
           <p>
-            You are adjusting values in the Atkinsons dither algorithm when you
-            slide these sliders.
+            You are adjusting values in Atkinsons dither algorithm 
           </p>
+          <p>when you
+            slide these sliders.</p>
+          <br>
           <br>
           <video autoplay loop </video>>
-            <source src="img/howto2.mov" type="video/mp4" />
+            <source src="img/howto6.mov" type="video/mp4" />
           </video>
           <br>
-          
+          <br>
+          <p class="nummer">last:</p>
           <p>save your image as a PNG.</p>
           <br>
+          <br>
           <video autoplay loop </video>>
-            <source src="img/howto2.mov" type="video/mp4" />
+            <source src="img/howto7.mov" type="video/mp4" />
           </video>
+          <br>
+          <br>
           <p class="tussentitel">What is dithering?</p>
+          <br>
           <p>
-            Computers used to have 1-bit displays. In reference to images ‘bits’
-            refer to the number of tonal variation of a color. This means there
-            were only two color options for a pixel. Grey-scaled images couldn’t
-            be displayed.
+            Computers used to have 1-bit displays. In reference to    
           </p>
+          <p>images ‘bits’
+            refer to the number of tonal variation</p>
+          <p>of a color. This means there
+            were only two color options</p>
+          <p>for a pixel. Grey-scaled images couldn’t
+            be displayed.</p>
+          
+          <br>
+          <br>
           <img src="img/overlay2.jpg" />
+          <br>
+          <br>
           <p>
-            Dither algorithms are a solution for this problem. This code create
-            an illusion of grey-scales.
+            Dither algorithms are a solution for this problem. 
           </p>
+          <p>This code create
+            an illusion of grey-scales.</p>
+          <br>
+          <br>
           <img src="img/overlay3.jpeg" />
+          <br>
+          <br>
           <p>
-            There arevarious types of dithering. Some create ordered patterns,
+            There are various types of dithering. Some create ordered patterns,
             others create disordered patterns. I’m the most interested in the
-            second type because it acts more unpredictable.
+            second type because 
           </p>
-          <img src="img/overlay4.png" />
+          <p>it acts more unpredictable.</p>
+          <br>
+          <br>
           <img src="img/overlay5.jpg" />
+          <br>
+          <img src="img/overlay4.png" />
+          <br>
+          <br>
           <p>
-            It is called error diffusion dithering. This algorithms look at each
-            pixel of the image in sequence. Pixels more than 50% black become
-            black and pixels with more than 50% white become white.
+            It's called error diffusion dithering. This algorithms
           </p>
+          <p>looks at each
+            pixel of the image in sequence.</p>
+          <p>Pixels more than 50% black become
+            black and pixels</p>
+            <p>with more than 50% white become white.</p>
+          <br>
+          <br>
           <img src="img/overlay6.jpg" />
+          <br>
           <img src="img/overlay7.png" />
+          <br>
+          <br>
           <p>
             The interesting part is the error in this code, which makes the
             patterns unpredictable. The error distributes the difference of the
@@ -147,17 +190,43 @@
             pixels. What the algorithm does at one location influences what
             happens at other locations.
           </p>
+          <br>
+          
           <p>
-            I used explanation from these sites, because they are knowers and
-            they explained it very well and do it better than I can. so thank
-            you:
-            https://medium.com/@ethanmiller/dithering-and-animation-with-third-ear-eb21395ca355
-            https://www.evilmadscientist.com/2012/dithering/
-            https://www.leadtools.com/blog/imaging/introduction-dithering/
-            http://verlagmartinkoch.at/software/dither/index.html
-          </p>
+            I understood this technical part of dithering thanks to</p>
+          <p>the following sites. I used parts of their explenation</p>
+          <p>for this text.</p>
+          <br>
+          
+           <p>
+            <a href="https://medium.com/@ethanmiller/dithering-and-animation-with-third-ear-eb21395ca355">www.medium.com</a></p>
+           <p> <a href="https://www.evilmadscientist.com/2012/dithering/">www.evilmadscientist.com</a></p>
+           <p><a href="https://www.leadtools.com/blog/imaging/introduction-dithering/">www.leadtools.com</a></p>
+           <p> <a href="http://verlagmartinkoch.at/software/dither/index.html">verlagmartinkoch.at</a></p>
+          
+            
+            
+          
+          <br>
+          <p>© Cato Speltincx</p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
 
-          <p>copyright Cato Speltincx</p>
         </div>
       </div>
 
@@ -236,7 +305,11 @@
         ></canvas>
       </div>
     </div>
-    <div class="notice">View this tool on your desktop.</div>
+    <div class="notice">
+
+      <p> View this tool on a bigger screen.</p>
+      <p>© Cato Speltincx</p>
+    </div>
 
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="js/fabric.min.js"></script>

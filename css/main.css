@@ -39,6 +39,27 @@ img {
   grid-area: header2;
 }
 
+.mail a {
+  text-decoration: none;
+}
+
+.mail {
+  grid-area: header2;
+  margin: 13px 0px 0px 705px;
+  padding: 5px 10px 7px 10px;
+  font-family: "Kosugi", sans-serif;
+  font-style: italic;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 0.7rem;
+}
+
+.mail:hover {
+  text-decoration: underline;
+  background-color: white;
+  background-color: transparent;
+}
+
 .overlay_btn {
   grid-area: header2;
   margin: 11px 0px 0px 630px;
@@ -47,7 +68,7 @@ img {
   background-color: springgreen;
   border: 1px dashed red;
   font-size: 1.2rem;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Kosugi", sans-serif;
 }
 
 .overlay_btn:hover {
@@ -210,7 +231,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 /* Position the content inside the overlay */
 .overlay-content {
-  background-color: rgb(255, 255, 255);
+  background-color: transparent;
   color: red;
   position: relative;
   max-width: 600px;
@@ -225,31 +246,30 @@ input[type="range"]::-webkit-slider-runnable-track {
 .overlay-content p {
   margin: 0;
   text-align: left;
-  width: 94%;
+  width: 95%;
   font-family: "Courier New", Courier, monospace;
 }
 
-.overlay-content .introtekst {
+/* .overlay-content .introtekst {
   font-family: grHelveticaBold;
-  font-size: 1.02rem;
-}
+} */
 
 .overlay-content .tussentitel {
   font-family: "Kosugi", sans-serif;
   font-size: 2rem;
   color: red;
+  margin-bottom: 5px;
 }
 
 .overlay-content .nummer {
   font-family: "Kosugi", sans-serif;
-  font-size: 1.5rem;
-  text-align: right;
+  font-size: 1.3rem;
+
   padding: 5px 10px 5px 10px;
-  margin-right: 100px;
 }
 
 .overlay-content img {
-  max-width: 100%;
+  max-width: 95%;
 }
 
 .overlay .closebtn {
@@ -268,7 +288,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 video {
   margin: 0;
-  width: 100%;
+  width: 95%;
 }
 
 /*notice voor gsmers*/
@@ -339,7 +359,18 @@ video {
 @media (max-width: 1300px) {
   .notice {
     display: block;
-    padding: 50px;
+    font-family: "Courier New", Courier, monospace;
+    color: red;
+    background-color: springgreen;
+    width: fit-content;
+    height: fit-content;
+    padding: 0px;
+    border: 1px dashed red;
+    padding: 3px 10px 3px 10px;
+  }
+
+  .notice p {
+    margin: 0;
   }
 
   .grid {
