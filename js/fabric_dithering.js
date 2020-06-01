@@ -196,7 +196,7 @@ window.addEventListener("keydown", (e) => {
     });
   }
 
-  if (e.key === "p") {
+  if (e.key === "v") {
     console.log(e);
     _clipboard.clone(function (clonedObj) {
       gFabricCanvas.discardActiveObject();
@@ -289,7 +289,7 @@ document.querySelector("#slider-brightness").addEventListener("input", (e) => {
 });
 
 document.querySelector("#slider-error").addEventListener("input", (e) => {
-  gDitherError = parseInt(e.target.value);
+  gDitherError = parseInt(e.target.value) / 100;
 });
 
 //resize canvas

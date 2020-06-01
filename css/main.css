@@ -1,14 +1,14 @@
 body {
   /* min-height: 100vh; */
-  background-color: grey;
-  margin: 40px;
+  background-color: lightgray;
+  margin: 80px 40px 20px 40px;
   font-size: 15px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 150px 1230px 150px;
-  grid-template-rows: 30px 801px 100px;
+  grid-template-rows: 50px 801px 100px;
   grid-template-areas:
     "header1 header2 header3"
     "library canvasses slider"
@@ -49,9 +49,12 @@ img {
 button {
   width: fit-content;
   height: fit-content;
+  padding-bottom: 5px;
+
   color: black;
   cursor: pointer;
   border: none;
+  font-family: "Kosugi", sans-serif;
 }
 
 button p {
@@ -70,7 +73,13 @@ button p {
   flex-direction: column;
   margin-left: 35px;
   margin-top: 100px;
-  max-width: 130px;
+  max-width: 100%;
+}
+
+.slider_brightness,
+.slider_error {
+  display: flex;
+  flex-direction: column;
 }
 
 /*STYLING SLIDER*/
@@ -91,7 +100,6 @@ input[type="range"]:focus {
 input[type="range"]::-ms-track {
   width: 100%;
   cursor: pointer;
-
   background: transparent;
   border-color: transparent;
   color: transparent;
@@ -155,7 +163,8 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 /*OVERLAY*/
 .overlay_btn {
-  grid-area: footer2;
+  grid-area: header2;
+  margin-left: 700px;
 }
 
 .overlay {
@@ -174,10 +183,13 @@ input[type="range"]::-webkit-slider-runnable-track {
 /* Position the content inside the overlay */
 .overlay-content {
   position: relative;
-  top: 25%; /* 25% from the top */
-  width: 100%; /* 100% width */
-  text-align: center; /* Centered text/links */
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
   margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .overlay .closebtn {
@@ -195,14 +207,21 @@ input[type="range"]::-webkit-slider-runnable-track {
 /*werkend voor ook andere schermen maken*/
 
 @media (max-width: 1600px) {
+  body {
+    margin: 10px 40px 20px 40px;
+  }
+  button {
+    margin-top: 10px;
+  }
+
   #upload {
     grid-area: header2;
-    margin-left: 486px;
+    margin-left: 497px;
   }
 
   #save {
     grid-area: header2;
-    margin-left: 1125px;
+    margin-left: 1144px;
   }
 
   #modal-open-button {
@@ -223,18 +242,21 @@ input[type="range"]::-webkit-slider-runnable-track {
   .library img {
     max-height: 50px;
     max-width: 50px;
-    margin-right: 20px;
+    margin-right: 10px;
   }
 
   /*slider*/
   .slider {
     grid-area: footer2;
     margin-left: 640px;
-    max-width: 100px;
+    min-width: 100px;
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+  }
+
+  .slider_error {
+    margin-left: 20px;
   }
 
   input[type="range"]::-webkit-slider-thumb {

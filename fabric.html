@@ -26,12 +26,79 @@
         >
         <!-- Overlay content -->
         <div class="overlay-content">
+          <h2>
+            This is a dither and zoom machine. Upload an image and go through
+            their 1-bit translation. Your new hobby will be observing error
+            diffusion patterns. This organised pixel chaos is formed by Bill
+            Atkinsons dither algorithm.
+          </h2>
           <h1>What is dithering?</h1>
+          <p>
+            Computers used to have 1-bit displays. In reference to images ‘bits’
+            refer to the number of tonal variation of a color. This means there
+            were only two color options for a pixel. Grey-scaled images couldn’t
+            be displayed.
+          </p>
+          <img src="img/overlay2.jpg" />
+          <p>
+            Dither algorithms are a solution for this problem. This code create
+            an illusion of grey-scales.
+          </p>
+          <img src="img/overlay3.jpeg" />
+          <p>
+            There arevarious types of dithering. Some create ordered patterns,
+            others create disordered patterns. I’m the most interested in the
+            second type because it acts more unpredictable.
+          </p>
+          <img src="img/overlay4.png" />
+          <img src="img/overlay5.png" />
+          <p>
+            It is called error diffusion dithering. This algorithms look at each
+            pixel of the image in sequence. Pixels more than 50% black become
+            black and pixels with more than 50% white become white.
+          </p>
+          <img src="img/overlay6.jpg" />
+          <img src="img/overlay7.png" />
+          <p>
+            The interesting part is the error in this code, which makes the
+            patterns unpredictable. The error distributes the difference of the
+            final (1-bit) pixel’s value and the original value to the neighbour
+            pixels. What the algorithm does at one location influences what
+            happens at other locations.
+          </p>
+          <p>
+            I used explanation from these sites, because they are knowers and
+            they explained it very well and do it better than I can. so thank
+            you:
+            https://medium.com/@ethanmiller/dithering-and-animation-with-third-ear-eb21395ca355
+            https://www.evilmadscientist.com/2012/dithering/
+            https://www.leadtools.com/blog/imaging/introduction-dithering/
+            http://verlagmartinkoch.at/software/dither/index.html
+          </p>
           <h1>How does this tool work?</h1>
-          <p>deze knop doet dit</p>
-          <img src="img/favicon1.png" />
-          <p>deze knop doet dat</p>
-          <img src="img/favicon3.png" />
+          <p>
+            Upload one or more images. They will appear on the fabric-canvas
+            canvas.
+          </p>
+          <p>
+            Drag, rotate, skew, scalee your image by dragging the blue hendles.
+            Remove with backspace. Copy with c. Paste with p.
+          </p>
+          <p>
+            Click (don't drag) on the gradient shapes and move them over your
+            images.
+          </p>
+          <p>
+            Zoom in with your mouse on the dither-canvas and explore the 1-bit
+            translation of your image. And double click on the dither-canvas to
+            start over.
+          </p>
+          <p>
+            You are adjusting values in the Atkinsons dither algorithm when you
+            slide these sliders.
+          </p>
+          <p>save your image as a PNG.</p>
+          <p>copyright Cato Speltincx</p>
         </div>
       </div>
 
@@ -40,21 +107,8 @@
         >How does this work? & What is dithering?</span
       >
 
-      <!-- <header class="introtekst">
-        <p>This is a dither and zoom machine.</p>
-        <!-- <p>
-          Upload an image and go through their 1-bit translation.
-        </p>
-        <p>Your new hobby will be observing error diffusion patterns.</p>
-        <p>
-          This organised pixel chaos is formed by Bill Atkinsons dither
-          algorithm.
-        </p>
-      </header> -->
-
       <button id="upload">
-        <p>upload</p>
-        <p>JPG-PNG</p>
+        <p>upload JPG-PNG</p>
       </button>
 
       <!-- MAIN -->
@@ -80,22 +134,31 @@
       </div>
 
       <button id="save">
-        <p>save</p>
-        <p>as PNG</p>
+        <p>save as PNG</p>
       </button>
 
       <div class="slider">
-        <p>brightness</p>
-        <input
-          type="range"
-          name="brightness"
-          id="slider-brightness"
-          min="0"
-          max="254"
-        />
+        <div class="slider_brightness">
+          <p>brightness</p>
+          <input
+            type="range"
+            name="brightness"
+            id="slider-brightness"
+            min="0"
+            max="254"
+          />
+        </div>
 
-        <p>error</p>
-        <input type="range" name="error" id="slider-error" min="0" max="2" />
+        <div class="slider_error">
+          <p>error</p>
+          <input
+            type="range"
+            name="error"
+            id="slider-error"
+            min="0"
+            max="150"
+          />
+        </div>
       </div>
 
       <div class="canvassen">
@@ -115,26 +178,9 @@
           style="display: grid;"
         ></canvas>
       </div>
-
-      <!-- <p class="instructie__fabric1">
-        Drag, rotate, skew, scale, copy,
-      </p>
-      <p class="instructie__fabric2">
-        delete your uploaded image on this canvas.
-      </p>
-
-      <p class="instructie__dither1">
-        Zoom and explore the 1-bit translation
-      </p>
-
-      <p class="instructie__dither2">
-        of your uploaded image on this canvas.
-      </p> -->
     </div>
     <div class="notice">View this tool on your desktop.</div>
-    <div class="footer">
-      copyright
-    </div>
+
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="js/fabric.min.js"></script>
     <script src="js/fabric_dithering.js"></script>
