@@ -21,18 +21,99 @@
       <!-- The overlay -->
       <div id="myNav" class="overlay">
         <!-- Button to close the overlay navigation -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-          >&times;</a
-        >
+
         <!-- Overlay content -->
         <div class="overlay-content">
-          <h2>
-            This is a dither and zoom machine. Upload an image and go through
-            their 1-bit translation. Your new hobby will be observing error
-            diffusion patterns. This organised pixel chaos is formed by Bill
-            Atkinsons dither algorithm.
-          </h2>
-          <h1>What is dithering?</h1>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >X</a
+          >
+          <br />
+
+          <p class="introtekst">
+            This is a dither and zoom machine.
+          </p>
+          <p class="introtekst">
+            Upload an image and go through their 1-bit translation.
+          </p>
+          <p class="introtekst">
+            Your new hobby will be observing error diffusion patterns.
+          </p>
+          <p class="introtekst">
+            This organised pixel chaos is formed by Bill Atkinsons dither
+            algorithm.
+          </p>
+
+          <br />
+          <p class="tussentitel">How does this tool work?</p>
+          <br />
+          
+          <p>
+            Upload one or more images. 
+          </p>
+          <p>They will appear on the fabric-canvas, the left canvas.</p>
+            <br>
+          <video autoplay loop </video>>
+            <source src="img/howto1.mov" type="video/mp4" />
+          </video>
+          <br>
+          <br>
+          <p>
+            Drag, rotate, skew, scalee your image by  
+          </p>
+          <p>dragging the blue hendles. Remove with backspace.</p>
+          <p>Copy with c. Paste with p.</p>
+          <br>
+          <br>
+          <video  autoplay loop </video>>
+            <source src="img/howto2.mov" type="video/mp4" />
+          </video>
+          <br>
+          <br>
+          <p>
+            CLICK (don't drag) on shapes and move 
+          </p>
+          <p>them over your
+            images.</p>
+          <br>
+          <br>
+          <video  autoplay loop </video>>
+            <source src="img/howto3.mov" type="video/mp4" />
+          </video>
+          <video  autoplay loop </video>>
+            <source src="img/howto4.mov" type="video/mp4" />
+          </video>
+          <br>
+          <br>
+          <p>
+            Zoom in with your mouse on the dither-canvas 
+          </p>
+          <p>and explore the 1-bit
+            translation of your image.</p>
+            <p>DOUBLE CLICK on the dither-canvas to
+              start over.</p>
+          <br>
+          <br>
+          <video autoplay loop </video>>
+            <source src="img/howto5.mov" type="video/mp4" />
+          </video>
+          <br>
+          
+          <p>
+            You are adjusting values in the Atkinsons dither algorithm when you
+            slide these sliders.
+          </p>
+          <br>
+          <video autoplay loop </video>>
+            <source src="img/howto2.mov" type="video/mp4" />
+          </video>
+          <br>
+          
+          <p>save your image as a PNG.</p>
+          <br>
+          <video autoplay loop </video>>
+            <source src="img/howto2.mov" type="video/mp4" />
+          </video>
+          <p class="tussentitel">What is dithering?</p>
           <p>
             Computers used to have 1-bit displays. In reference to images ‘bits’
             refer to the number of tonal variation of a color. This means there
@@ -51,7 +132,7 @@
             second type because it acts more unpredictable.
           </p>
           <img src="img/overlay4.png" />
-          <img src="img/overlay5.png" />
+          <img src="img/overlay5.jpg" />
           <p>
             It is called error diffusion dithering. This algorithms look at each
             pixel of the image in sequence. Pixels more than 50% black become
@@ -75,37 +156,13 @@
             https://www.leadtools.com/blog/imaging/introduction-dithering/
             http://verlagmartinkoch.at/software/dither/index.html
           </p>
-          <h1>How does this tool work?</h1>
-          <p>
-            Upload one or more images. They will appear on the fabric-canvas
-            canvas.
-          </p>
-          <p>
-            Drag, rotate, skew, scalee your image by dragging the blue hendles.
-            Remove with backspace. Copy with c. Paste with p.
-          </p>
-          <p>
-            Click (don't drag) on the gradient shapes and move them over your
-            images.
-          </p>
-          <p>
-            Zoom in with your mouse on the dither-canvas and explore the 1-bit
-            translation of your image. And double click on the dither-canvas to
-            start over.
-          </p>
-          <p>
-            You are adjusting values in the Atkinsons dither algorithm when you
-            slide these sliders.
-          </p>
-          <p>save your image as a PNG.</p>
+
           <p>copyright Cato Speltincx</p>
         </div>
       </div>
 
       <!-- Use any element to open/show the overlay navigation menu -->
-      <span class="overlay_btn" onclick="openNav()"
-        >How does this work? & What is dithering?</span
-      >
+      <button class="overlay_btn" onclick="openNav()">???</button>
 
       <button id="upload">
         <p>upload JPG-PNG</p>
