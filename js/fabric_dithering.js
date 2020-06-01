@@ -257,45 +257,19 @@ realFileBtn.addEventListener("change", (e) => {
   });
 });
 
-//pop-up
-$(document).ready(function () {
-  console.log("JQUERY IS READY!");
-  $("#modal-open-button").hover(function (e) {
-    console.log('$("#modal-open-button").click');
-    openPopup();
-  });
-  $("#modal-close-button").click(function (e) {
-    console.log('$("#modal-close-button).click');
-    closePopup();
-  });
-});
-
-function openPopup() {
-  $("#modal-open-button").prop("disabled", true);
-  $("#popup-content").fadeIn();
-  updatePopup();
+//HOW DOES THIS WORK BTN_____OVERLAY
+/* Open */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+  document.getElementById("myNav").style.display = "block";
+}
+/* Close */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+  document.getElementById("myNav").style.display = "none";
 }
 
-function closePopup() {
-  $("#modal-open-button").prop("disabled", false);
-  $("#popup-content").fadeOut();
-}
-
-function updatePopup() {
-  var $popupContent = $("#popup-content");
-  // http://api.jquery.com/height/
-  // http://api.jquery.com/outerheight/
-  var top = ($(window).height() - $popupContent.outerHeight()) / 2; // Center vertical
-  //var top = "100px"; // Fixed offset
-  //var top = $(window).height() / 2 - $popupContent.outerHeight() / 2; // Center
-  // http://api.jquery.com/width/
-  //  http://api.jquery.com/outerWidth/
-  var left = ($(window).width() - $popupContent.outerWidth()) / 2; // Center horizontal
-  $popupContent.css({
-    top: top,
-    left: left,
-  });
-}
+//
 
 function resetZoom() {
   gZoom = 1;

@@ -1,6 +1,6 @@
 body {
   /* min-height: 100vh; */
-  background-color: whitesmoke;
+  background-color: grey;
   margin: 40px;
   font-size: 15px;
 }
@@ -153,31 +153,41 @@ input[type="range"]::-webkit-slider-runnable-track {
   border: 1px solid red;
 }
 
-/* pop-up */
-.popup_titel {
-  font-family: kosugi;
-  font-style: normal;
+/*OVERLAY*/
+.overlay_btn {
+  grid-area: footer2;
 }
 
-#popup-content {
-  background-color: seagreen;
-  display: none;
-  max-width: 600px;
-  position: fixed;
-  margin: 0px 0px 5px 0px;
-  font-family: "Times New Roman", Times, serif;
-  font-style: italic;
-  font-size: 1.1rem;
-  z-index: 1002;
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 0, 0, 0.8); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
-#popup-content #modal-close-button {
-  text-align: right;
-  background-color: none;
-  border: none;
-  color: black;
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
 
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/*notice voor gsmers*/
 .notice {
   display: none;
 }
@@ -245,7 +255,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .notice {
     display: block;
     padding: 50px;

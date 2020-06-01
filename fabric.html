@@ -17,12 +17,28 @@
       <!-- HEADER -->
 
       <p class="titel">DITHEROSCOOP</p>
-      <input
-        id="modal-open-button"
-        type="button"
-        value="???"
-        style="margin: 0;"
-      />
+
+      <!-- The overlay -->
+      <div id="myNav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <h1>What is dithering?</h1>
+          <h1>How does this tool work?</h1>
+          <p>deze knop doet dit</p>
+          <img src="img/favicon1.png" />
+          <p>deze knop doet dat</p>
+          <img src="img/favicon3.png" />
+        </div>
+      </div>
+
+      <!-- Use any element to open/show the overlay navigation menu -->
+      <span class="overlay_btn" onclick="openNav()"
+        >How does this work? & What is dithering?</span
+      >
 
       <!-- <header class="introtekst">
         <p>This is a dither and zoom machine.</p>
@@ -114,33 +130,6 @@
       <p class="instructie__dither2">
         of your uploaded image on this canvas.
       </p> -->
-
-      <!-- Popup content -->
-      <div id="popup-content">
-        <div>
-          <p class="popup_titel">WHAT IS DITHERING?</p>
-          <p>
-            In the 1980’s computers had 1-bit displays. In reference to images
-            ‘bits’ refer to the number of tonal variation of a color. This means
-            there were only two color options for a pixel. Grey-scaled images
-            couldn’t be displayed. Dither algorithms are a solution for this
-            problem. This code create an illusion of grey-scales. There are
-            various types of dithering. Some create ordered patterns, others
-            create disordered patterns. I’m the most interested in the second
-            type because it acts more unpredictable. It is called error
-            diffusion dithering. This algorithms look at each pixel of the image
-            in sequence. Pixels more than 50% black become black and pixels with
-            more than 50% white become white. The interesting part is the error
-            in this code, which makes the patterns unpredictable. The error
-            distributes the difference of the final (1-bit) pixel’s value and
-            the original value to the neighbour pixels. What the algorithm does
-            at one location influences what happens at other locations.
-          </p>
-        </div>
-        <div>
-          <input id="modal-close-button" type="button" value="Close Popup" />
-        </div>
-      </div>
     </div>
     <div class="notice">View this tool on your desktop.</div>
     <div class="footer">
