@@ -102,7 +102,6 @@ button p {
 #save {
   grid-area: slider;
   margin-left: 35px;
-  margin-top: 35px;
 }
 
 .slider {
@@ -175,7 +174,6 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 #upload {
   grid-area: library;
-  margin-top: 35px;
 }
 
 .library {
@@ -185,7 +183,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   width: 100px;
   height: 700px;
   overflow-y: auto;
-  margin: 70px 0px 0px 7px;
+  margin: 50px 0px 0px 7px;
   cursor: pointer;
 }
 
@@ -311,11 +309,13 @@ video {
   #upload {
     grid-area: header2;
     margin-left: 490px;
+    margin-top: 35px;
   }
 
   #save {
     grid-area: header2;
     margin-left: 1135px;
+    margin-top: 35px;
   }
 
   #modal-open-button {
