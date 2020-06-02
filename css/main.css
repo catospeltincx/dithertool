@@ -250,6 +250,9 @@ input[type="range"]::-webkit-slider-runnable-track {
   font-family: "Courier New", Courier, monospace;
 }
 
+.overlay-content .highlight {
+  color: springgreen;
+}
 /* .overlay-content .introtekst {
   font-family: grHelveticaBold;
 } */
