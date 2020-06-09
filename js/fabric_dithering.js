@@ -15,13 +15,27 @@ var listBeginImages = [
   "img/begin_11.jpeg",
 ];
 var beginImage = "img/begin_1.jpeg";
-
 var listBeginObjects = [
-  "img/object-02.png",
-  "img/object-22.png",
-  "img/object-01.png",
+  "img/object01.png",
+  "img/object02.png",
+  "img/object03.png",
+  "img/object04.png",
+  "img/object05.png",
+  "img/object06.png",
+  "img/object07.png",
+  "img/object08.png",
+  "img/object09.png",
+  "img/object10.png",
+  "img/object11.png",
+  "img/object12.png",
+  "img/object13.png",
+  "img/object14.png",
+  "img/object15.png",
+  "img/object16.png",
+  "img/object17.png",
+  "img/object18.png",
 ];
-var beginObject = "img/begin_img.jpeg";
+var beginObject = "img/object01.png";
 
 //const gCanvas = document.getElementById("dither-canvas");
 //const gCtx = gCanvas.getContext("2d");
@@ -76,7 +90,7 @@ function fabricInit() {
     listBeginObjects[Math.floor(Math.random() * listBeginObjects.length)];
 
   fabric.Image.fromURL(beginObject, (img) => {
-    img.scale(0.5);
+    img.scale(0.2);
     img.set({ left: 150, top: 200 });
     gFabricCanvas.add(img);
   });
@@ -215,7 +229,7 @@ function onMouseWheel(e) {
 document.querySelectorAll(".library img").forEach((el) => {
   el.addEventListener("click", () => {
     fabric.Image.fromURL(el.src, (img) => {
-      img.scale(0.5);
+      img.scale(0.2);
       img.set({ left: 100, top: 100 });
       gFabricCanvas.add(img);
     });
