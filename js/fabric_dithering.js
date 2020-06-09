@@ -1,5 +1,20 @@
 let gFabricCanvas;
 
+//BEGIN BEELDEN
+var listBeginImages = [
+  "img/begin_img.jpeg",
+  "img/overlay2.jpg",
+  "img/overlay1.jpeg",
+];
+var beginImage = "img/begin_img.jpeg";
+
+var listBeginObjects = [
+  "img/object-02.png",
+  "img/object-22.png",
+  "img/object-01.png",
+];
+var beginObject = "img/begin_img.jpeg";
+
 //const gCanvas = document.getElementById("dither-canvas");
 //const gCtx = gCanvas.getContext("2d");
 let gWidth, gHeight, gStride, gSizeInBytes;
@@ -48,9 +63,22 @@ function fabricInit() {
   gFabricCanvas = new fabric.Canvas("fabric-canvas", {
     backgroundColor: "rgb(255, 255, 255)",
   });
-  fabric.Image.fromURL("img/begin_img.jpeg", (img) => {
+
+  beginImage =
+    listBeginImages[Math.floor(Math.random() * listBeginImages.length)];
+
+  fabric.Image.fromURL(beginImage, (img) => {
     img.scale(0.2);
     img.set({ left: 100, top: 100 });
+    gFabricCanvas.add(img);
+  });
+
+  beginObject =
+    listBeginObjects[Math.floor(Math.random() * listBeginObjects.length)];
+
+  fabric.Image.fromURL(beginObject, (img) => {
+    img.scale(0.5);
+    img.set({ left: 150, top: 200 });
     gFabricCanvas.add(img);
   });
 }
