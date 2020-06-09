@@ -12,16 +12,16 @@ var listBeginImages = [
   "img/begin_8.jpeg",
   "img/begin_9.jpeg",
   "img/begin_10.jpeg",
-  "img/begin_11.jpeg",
+  "img/begin_11.jpg",
 ];
 var beginImage = "img/begin_1.jpeg";
 var listBeginObjects = [
   "img/object01.png",
+
   "img/object02.png",
-  "img/object03.png",
-  "img/object04.png",
+
   "img/object05.png",
-  "img/object06.png",
+
   "img/object07.png",
   "img/object08.png",
   "img/object09.png",
@@ -91,7 +91,7 @@ function fabricInit() {
 
   fabric.Image.fromURL(beginObject, (img) => {
     img.scale(0.2);
-    img.set({ left: 150, top: 200 });
+    img.set({ left: 150, top: 500 });
     gFabricCanvas.add(img);
   });
 
