@@ -1,4 +1,5 @@
 let gFabricCanvas;
+
 //const gCanvas = document.getElementById("dither-canvas");
 //const gCtx = gCanvas.getContext("2d");
 let gWidth, gHeight, gStride, gSizeInBytes;
@@ -47,8 +48,11 @@ function fabricInit() {
   gFabricCanvas = new fabric.Canvas("fabric-canvas", {
     backgroundColor: "rgb(255, 255, 255)",
   });
-
-  //gFabricCanvas.add(rect);
+  fabric.Image.fromURL("img/begin_img.jpeg", (img) => {
+    img.scale(0.2);
+    img.set({ left: 100, top: 100 });
+    gFabricCanvas.add(img);
+  });
 }
 
 //
@@ -171,6 +175,7 @@ function onMouseWheel(e) {
   draw();
 }
 
+//library
 document.querySelectorAll(".library img").forEach((el) => {
   el.addEventListener("click", () => {
     fabric.Image.fromURL(el.src, (img) => {
