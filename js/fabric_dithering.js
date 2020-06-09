@@ -2,11 +2,19 @@ let gFabricCanvas;
 
 //BEGIN BEELDEN
 var listBeginImages = [
-  "img/begin_img.jpeg",
-  "img/overlay2.jpg",
-  "img/overlay1.jpeg",
+  "img/begin_1.jpeg",
+  "img/begin_2.jpeg",
+  "img/begin_3.jpeg",
+  "img/begin_4.jpeg",
+  "img/begin_5.jpeg",
+  "img/begin_6.jpeg",
+  "img/begin_7.jpeg",
+  "img/begin_8.jpeg",
+  "img/begin_9.jpeg",
+  "img/begin_10.jpeg",
+  "img/begin_11.jpeg",
 ];
-var beginImage = "img/begin_img.jpeg";
+var beginImage = "img/begin_1.jpeg";
 
 var listBeginObjects = [
   "img/object-02.png",
@@ -64,21 +72,21 @@ function fabricInit() {
     backgroundColor: "rgb(255, 255, 255)",
   });
 
-  beginImage =
-    listBeginImages[Math.floor(Math.random() * listBeginImages.length)];
-
-  fabric.Image.fromURL(beginImage, (img) => {
-    img.scale(0.2);
-    img.set({ left: 100, top: 100 });
-    gFabricCanvas.add(img);
-  });
-
   beginObject =
     listBeginObjects[Math.floor(Math.random() * listBeginObjects.length)];
 
   fabric.Image.fromURL(beginObject, (img) => {
     img.scale(0.5);
     img.set({ left: 150, top: 200 });
+    gFabricCanvas.add(img);
+  });
+
+  beginImage =
+    listBeginImages[Math.floor(Math.random() * listBeginImages.length)];
+
+  fabric.Image.fromURL(beginImage, (img) => {
+    //img.scale(0.2);
+    img.set({ left: 100, top: 100 });
     gFabricCanvas.add(img);
   });
 }
@@ -207,7 +215,7 @@ function onMouseWheel(e) {
 document.querySelectorAll(".library img").forEach((el) => {
   el.addEventListener("click", () => {
     fabric.Image.fromURL(el.src, (img) => {
-      img.scale(0.2);
+      img.scale(0.5);
       img.set({ left: 100, top: 100 });
       gFabricCanvas.add(img);
     });

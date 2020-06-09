@@ -1,7 +1,7 @@
 body {
   /* min-height: 100vh; */
   background-color: lightgray;
-  margin: 100px 40px 20px 40px;
+  margin: 40px 40px 20px 40px;
   font-size: 15px;
 }
 
@@ -336,13 +336,13 @@ video {
     flex-direction: row;
     width: 600px;
     overflow-x: auto;
-    margin: 10px 0px;
+    margin: 15px 0px;
   }
 
   .library img {
-    max-height: 25px;
-    max-width: 25px;
-    margin-right: 8px;
+    max-height: 45px;
+    max-width: 45px;
+    margin-right: 10px;
   }
 
   /*slider*/
@@ -352,7 +352,7 @@ video {
 
   .slider p {
     font-size: 0.55rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   .slider {
@@ -376,7 +376,7 @@ video {
 @media (max-width: 1300px) {
   .notice {
     display: block;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Kosugi", sans-serif;
     color: red;
     background-color: springgreen;
     width: fit-content;
@@ -384,6 +384,7 @@ video {
     padding: 0px;
     border: 1px dashed red;
     padding: 3px 10px 3px 10px;
+    margin-top: 40px;
   }
 
   .notice p {
