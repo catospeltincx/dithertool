@@ -306,6 +306,12 @@ video {
     margin-top: 30px;
   }
 
+  .titel {
+    grid-area: header2;
+    width: 230px;
+    margin-top: 35px;
+  }
+
   #upload {
     grid-area: header2;
     margin-left: 490px;
@@ -330,27 +336,36 @@ video {
     flex-direction: row;
     width: 600px;
     overflow-x: auto;
-    margin-top: 20px;
+    margin: 10px 0px;
   }
 
   .library img {
-    max-height: 50px;
-    max-width: 50px;
-    margin-right: 10px;
+    max-height: 25px;
+    max-width: 25px;
+    margin-right: 8px;
   }
 
   /*slider*/
+  input[type="range"] {
+    width: 215%; /* Specific width is required for Firefox. */
+  }
+
+  .slider p {
+    font-size: 0.55rem;
+    margin-bottom: 10px;
+  }
+
   .slider {
     grid-area: footer2;
-    margin-left: 640px;
+    margin-left: 630px;
     min-width: 100px;
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
   }
 
   .slider_error {
-    margin-left: 20px;
+    margin-left: 180px;
   }
 
   .overlay-content {
