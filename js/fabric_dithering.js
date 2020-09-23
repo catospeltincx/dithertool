@@ -17,11 +17,8 @@ var listBeginImages = [
 var beginImage = "img/begin_1.jpeg";
 var listBeginObjects = [
   "img/object01.png",
-
   "img/object02.png",
-
   "img/object05.png",
-
   "img/object07.png",
   "img/object08.png",
   "img/object09.png",
@@ -36,6 +33,23 @@ var listBeginObjects = [
   "img/object18.png",
 ];
 var beginObject = "img/object01.png";
+
+var presentatieImg1 = "img/dokske.jpg";
+var presentatieImg2 = "img/fabiola.jpg";
+var presentatieImg3 = "img/reading.jpg";
+var presentatieImg4 = "img/runninginpark.jpg";
+var presentatieImg7 = "img/typo2.jpg";
+var presentatieImg8 = "img/bread.jpg";
+var presentatieImg9 = "img/eat1.jpg";
+var presentatieImg9 = "img/eat2.jpg";
+var presentatieImg10 = "img/typo3.jpg";
+var presentatieImg11 = "img/ticket.jpg";
+var presentatieImg12 = "img/typo5.jpg";
+var presentatieImg13 = "img/typo6.jpg";
+var presentatieImg14 = "img/cook1.jpg";
+var presentatieImg15 = "img/drink1.jpg";
+var presentatieImg16 = "img/flora.jpg";
+var presentatieImg17 = "img/middelheim.jpg";
 
 //const gCanvas = document.getElementById("dither-canvas");
 //const gCtx = gCanvas.getContext("2d");
@@ -86,23 +100,133 @@ function fabricInit() {
     backgroundColor: "rgb(255, 255, 255)",
   });
 
-  beginObject =
-    listBeginObjects[Math.floor(Math.random() * listBeginObjects.length)];
+  var text1 = new fabric.Text("hello, ", {
+    left: 50,
+    top: 50,
+    fontSize: 15,
+    fontFamily: "Kosugi",
+    underline: true,
+  });
 
-  fabric.Image.fromURL(beginObject, (img) => {
-    img.scale(0.2);
-    img.set({ left: 150, top: 500 });
+  var text2 = new fabric.Text("my name is Cato", {
+    left: 50,
+    top: 65,
+    fontSize: 15,
+    fontFamily: "Kosugi",
+    underline: true,
+  });
+
+  gFabricCanvas.add(text1, text2);
+
+  fabric.Image.fromURL(presentatieImg1, (img) => {
+    img.scale(0.1);
+    img.set({ left: 50, top: 85 });
     gFabricCanvas.add(img);
   });
 
-  beginImage =
-    listBeginImages[Math.floor(Math.random() * listBeginImages.length)];
-
-  fabric.Image.fromURL(beginImage, (img) => {
-    //img.scale(0.2);
-    img.set({ left: 100, top: 100 });
+  fabric.Image.fromURL(presentatieImg2, (img) => {
+    img.scale(0.04);
+    img.set({ left: 50, top: 85 });
     gFabricCanvas.add(img);
   });
+
+  fabric.Image.fromURL(presentatieImg3, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg4, (img) => {
+    img.scale(0.04);
+    img.set({ left: 300, top: 70 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg7, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg8, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg9, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg10, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg11, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg12, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg13, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg14, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg15, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg16, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  fabric.Image.fromURL(presentatieImg17, (img) => {
+    img.scale(0.04);
+    img.set({ left: 200, top: 85 });
+    gFabricCanvas.add(img);
+  });
+
+  //UITGEZET VOOR PRESENTATIE 21/09
+
+  //beginObject =
+  //listBeginObjects[Math.floor(Math.random() * listBeginObjects.length)];
+
+  //fabric.Image.fromURL(beginObject, (img) => {
+  //img.scale(0.2);
+  //img.set({ left: 150, top: 500 });
+  //gFabricCanvas.add(img);
+  //});
+
+  //beginImage =
+  //listBeginImages[Math.floor(Math.random() * listBeginImages.length)];
+
+  //fabric.Image.fromURL(beginImage, (img) => {
+  //img.scale(0.2);
+  //img.set({ left: 100, top: 100 });
+  //gFabricCanvas.add(img);
+  //});
 }
 
 //
