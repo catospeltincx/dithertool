@@ -8,16 +8,17 @@ body {
 .grid {
   display: grid;
   grid-template-columns: 150px 1230px 150px;
-  grid-template-rows: 80px 801px 100px;
+  grid-template-rows: 80px 80px 801px 100px;
   grid-template-areas:
     "header1 header2 header3"
+    "probeer1 probeer2 probeer3"
     "library canvasses slider"
     "footer1 footer2 footer3";
   justify-content: center;
 }
 
 img {
-  max-width: 100%;
+  max-width: 170%;
 }
 
 .introtekst p {
@@ -105,7 +106,7 @@ button p {
 }
 
 .slider {
-  grid-area: slider;
+  grid-area: probeer2;
   display: flex;
   flex-direction: column;
   margin-left: 35px;
@@ -172,7 +173,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 /*library*/
 
-#upload {
+/* #upload {
   grid-area: library;
 }
 
@@ -189,7 +190,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 .library img {
   margin-bottom: 20px;
-}
+} */
 
 /*canvassen*/
 
@@ -356,10 +357,10 @@ video {
   }
 
   .slider {
-    grid-area: footer2;
+    grid-area: probeer2;
     margin-left: 630px;
     min-width: 100px;
-    margin-top: 5px;
+    margin-top: 1px;
     display: flex;
     flex-direction: row;
   }
