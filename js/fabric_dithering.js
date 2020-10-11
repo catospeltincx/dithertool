@@ -2,31 +2,175 @@ let gFabricCanvas;
 
 //BEGIN BEELDEN
 var listBeginImages = [
-  "img/begin1.jpg",
-  "img/begin2.jpg",
-  "img/begin3.jpg",
-  "img/begin4.jpg",
-  "img/begin5.jpg",
-  "img/begin6.jpg",
-  "img/begin7.jpg",
-  "img/begin8.jpg",
-  "img/begin9.jpg",
-  "img/begin10.jpg",
-  "img/begin11.jpg",
+  "img/begin001.jpg",
+  "img/begin002.jpg",
+  "img/begin003.jpg",
+  "img/begin004.jpg",
+  "img/begin005.jpg",
+  "img/begin006.jpg",
+  "img/begin007.jpg",
+  "img/begin008.jpg",
+  "img/begin009.jpg",
+  "img/begin010.jpg",
+  "img/begin011.jpg",
+  "img/begin012.jpg",
+  "img/begin013.jpg",
+  "img/begin014.jpg",
+  "img/begin015.jpg",
+  "img/begin016.jpg",
+  "img/begin017.jpg",
+  "img/begin018.jpg",
+  "img/begin019.jpg",
+  "img/begin020.jpg",
+  "img/begin021.jpg",
+  "img/begin022.jpg",
+  "img/begin023.jpg",
+  "img/begin024.jpg",
+  "img/begin025.jpg",
+  "img/begin026.jpg",
+  "img/begin027.jpg",
+  "img/begin028.jpg",
+  "img/begin029.jpg",
+  "img/begin030.jpg",
+  "img/begin031.jpg",
+  "img/begin032.jpg",
+  "img/begin033.jpg",
+  "img/begin034.jpg",
+  "img/begin035.jpg",
+  "img/begin036.jpg",
+  "img/begin037.jpg",
+  "img/begin038.jpg",
+  "img/begin039.jpg",
+  "img/begin040.jpg",
+  "img/begin041.jpg",
+  "img/begin042.jpg",
+  "img/begin043.jpg",
+  "img/begin044.jpg",
+  "img/begin045.jpg",
+  "img/begin046.jpg",
+  "img/begin047.jpg",
+  "img/begin048.jpg",
+  "img/begin049.jpg",
+  "img/begin050.jpg",
+  "img/begin051.jpg",
+  "img/begin052.jpg",
+  "img/begin053.jpg",
+  "img/begin054.jpg",
+  "img/begin055.jpg",
+  "img/begin056.jpg",
+  "img/begin057.jpg",
+  "img/begin058.jpg",
+  "img/begin059.jpg",
+  "img/begin060.jpg",
+  "img/begin061.jpg",
+  "img/begin062.jpg",
+  "img/begin063.jpg",
+  "img/begin064.jpg",
+  "img/begin065.jpg",
+  "img/begin066.jpg",
+  "img/begin067.jpg",
+  "img/begin068.jpg",
+  "img/begin069.jpg",
+  "img/begin070.jpg",
+  "img/begin071.jpg",
+  "img/begin072.jpg",
+  "img/begin073.jpg",
+  "img/begin074.jpg",
+  "img/begin075.jpg",
+  "img/begin076.jpg",
+  "img/begin077.jpg",
+  "img/begin078.jpg",
+  "img/begin079.jpg",
+  "img/begin080.jpg",
+  "img/begin081.jpg",
+  "img/begin082.jpg",
+  "img/begin082.jpg",
 ];
 var beginImage = "img/begin_1.jpeg";
 var listBeginObjects = [
-  "img/begin1.jpg",
-  "img/begin2.jpg",
-  "img/begin3.jpg",
-  "img/begin4.jpg",
-  "img/begin5.jpg",
-  "img/begin6.jpg",
-  "img/begin7.jpg",
-  "img/begin8.jpg",
-  "img/begin9.jpg",
-  "img/begin10.jpg",
-  "img/begin11.jpg",
+  "img/begin001.jpg",
+  "img/begin002.jpg",
+  "img/begin003.jpg",
+  "img/begin004.jpg",
+  "img/begin005.jpg",
+  "img/begin006.jpg",
+  "img/begin007.jpg",
+  "img/begin008.jpg",
+  "img/begin009.jpg",
+  "img/begin010.jpg",
+  "img/begin011.jpg",
+  "img/begin012.jpg",
+  "img/begin013.jpg",
+  "img/begin014.jpg",
+  "img/begin015.jpg",
+  "img/begin016.jpg",
+  "img/begin017.jpg",
+  "img/begin018.jpg",
+  "img/begin019.jpg",
+  "img/begin020.jpg",
+  "img/begin021.jpg",
+  "img/begin022.jpg",
+  "img/begin023.jpg",
+  "img/begin024.jpg",
+  "img/begin025.jpg",
+  "img/begin026.jpg",
+  "img/begin027.jpg",
+  "img/begin028.jpg",
+  "img/begin029.jpg",
+  "img/begin030.jpg",
+  "img/begin031.jpg",
+  "img/begin032.jpg",
+  "img/begin033.jpg",
+  "img/begin034.jpg",
+  "img/begin035.jpg",
+  "img/begin036.jpg",
+  "img/begin037.jpg",
+  "img/begin038.jpg",
+  "img/begin039.jpg",
+  "img/begin040.jpg",
+  "img/begin041.jpg",
+  "img/begin042.jpg",
+  "img/begin043.jpg",
+  "img/begin044.jpg",
+  "img/begin045.jpg",
+  "img/begin046.jpg",
+  "img/begin047.jpg",
+  "img/begin048.jpg",
+  "img/begin049.jpg",
+  "img/begin050.jpg",
+  "img/begin051.jpg",
+  "img/begin052.jpg",
+  "img/begin053.jpg",
+  "img/begin054.jpg",
+  "img/begin055.jpg",
+  "img/begin056.jpg",
+  "img/begin057.jpg",
+  "img/begin058.jpg",
+  "img/begin059.jpg",
+  "img/begin060.jpg",
+  "img/begin061.jpg",
+  "img/begin062.jpg",
+  "img/begin063.jpg",
+  "img/begin064.jpg",
+  "img/begin065.jpg",
+  "img/begin066.jpg",
+  "img/begin067.jpg",
+  "img/begin068.jpg",
+  "img/begin069.jpg",
+  "img/begin070.jpg",
+  "img/begin071.jpg",
+  "img/begin072.jpg",
+  "img/begin073.jpg",
+  "img/begin074.jpg",
+  "img/begin075.jpg",
+  "img/begin076.jpg",
+  "img/begin077.jpg",
+  "img/begin078.jpg",
+  "img/begin079.jpg",
+  "img/begin080.jpg",
+  "img/begin081.jpg",
+  "img/begin082.jpg",
+  "img/begin082.jpg",
 ];
 
 //const gCanvas = document.getElementById("dither-canvas");
@@ -78,24 +222,42 @@ function fabricInit() {
     backgroundColor: "rgb(255, 255, 255)",
   });
 
-  var text1 = new fabric.Text("add images", {
+  var text1 = new fabric.Text("on this canvas: ", {
     left: 50,
-    top: 65,
+    top: 55,
+
     fontSize: 15,
     fontFamily: "Kosugi",
     underline: true,
   });
 
-  gFabricCanvas.add(text1);
+  var text2 = new fabric.Text(
+    "delete objects (for example this text) you don't want to use ",
+    {
+      left: 50,
+      top: 80,
+      fontSize: 15,
+      fontFamily: "Kosugi",
+      underline: true,
+    }
+  );
 
-  //UITGEZET VOOR PRESENTATIE 21/09
+  var text3 = new fabric.Text("upload your own images", {
+    left: 50,
+    top: 105,
+    fontSize: 15,
+    fontFamily: "Kosugi",
+    underline: true,
+  });
+
+  gFabricCanvas.add(text1, text2, text3);
 
   beginImage =
     listBeginImages[Math.floor(Math.random() * listBeginImages.length)];
 
   fabric.Image.fromURL(beginImage, (img) => {
     img.scale(0.2);
-    img.set({ left: 100, top: 100 });
+    img.set({ left: 100, top: 140 });
     gFabricCanvas.add(img);
   });
 
@@ -107,6 +269,26 @@ function fabricInit() {
     img.set({ left: 150, top: 500 });
     gFabricCanvas.add(img);
   });
+
+  var text4 = new fabric.Text("on the right canvas:", {
+    left: 300,
+    top: 650,
+
+    fontSize: 15,
+    fontFamily: "Kosugi",
+    underline: true,
+  });
+
+  var text5 = new fabric.Text("zoom", {
+    left: 300,
+    top: 670,
+
+    fontSize: 15,
+    fontFamily: "Kosugi",
+    underline: true,
+  });
+
+  gFabricCanvas.add(text4, text5);
 }
 
 //
