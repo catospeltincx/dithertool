@@ -21,7 +21,7 @@ var listBeginImages = [
   "img/begin017.jpg",
   "img/begin018.jpg",
   "img/begin019.jpg",
-  "img/begin020.jpg",
+
   "img/begin021.jpg",
   "img/begin022.jpg",
   "img/begin023.jpg",
@@ -107,7 +107,7 @@ var listBeginObjects = [
   "img/begin017.jpg",
   "img/begin018.jpg",
   "img/begin019.jpg",
-  "img/begin020.jpg",
+
   "img/begin021.jpg",
   "img/begin022.jpg",
   "img/begin023.jpg",

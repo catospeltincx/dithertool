@@ -21,6 +21,10 @@ img {
   max-width: 170%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .introtekst p {
   margin: 0px 0px 10px 0px;
 }
@@ -372,6 +376,14 @@ video {
   .overlay-content {
     margin-top: 125px;
   }
+
+  .footer {
+    grid-area: footer2;
+    font-family: "Kosugi", sans-serif;
+    font-size: 0.7rem;
+    margin-top: 10px;
+    color: blue;
+  }
 }
 
 @media (max-width: 1300px) {
@@ -393,6 +405,10 @@ video {
   }
 
   .grid {
+    display: none;
+  }
+
+  .footer {
     display: none;
   }
 }
