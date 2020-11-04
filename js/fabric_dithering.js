@@ -222,7 +222,7 @@ function fabricInit() {
     backgroundColor: "rgb(255, 255, 255)",
   });
 
-  var text1 = new fabric.Text("on this canvas: ", {
+  var text1 = new fabric.Text("click: '???' to get along with this tool", {
     left: 50,
     top: 55,
 
@@ -231,26 +231,7 @@ function fabricInit() {
     underline: true,
   });
 
-  var text2 = new fabric.Text(
-    "delete objects (for example this text) you don't want to use ",
-    {
-      left: 50,
-      top: 80,
-      fontSize: 15,
-      fontFamily: "Kosugi",
-      underline: true,
-    }
-  );
-
-  var text3 = new fabric.Text("upload your own images", {
-    left: 50,
-    top: 105,
-    fontSize: 15,
-    fontFamily: "Kosugi",
-    underline: true,
-  });
-
-  gFabricCanvas.add(text1, text2, text3);
+  gFabricCanvas.add(text1);
 
   beginImage =
     listBeginImages[Math.floor(Math.random() * listBeginImages.length)];
@@ -270,25 +251,6 @@ function fabricInit() {
     gFabricCanvas.add(img);
   });
 
-  var text4 = new fabric.Text("on the right canvas:", {
-    left: 300,
-    top: 650,
-
-    fontSize: 15,
-    fontFamily: "Kosugi",
-    underline: true,
-  });
-
-  var text5 = new fabric.Text("zoom", {
-    left: 300,
-    top: 670,
-
-    fontSize: 15,
-    fontFamily: "Kosugi",
-    underline: true,
-  });
-
-  gFabricCanvas.add(text4, text5);
 }
 
 //

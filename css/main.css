@@ -175,27 +175,6 @@ input[type="range"]::-webkit-slider-runnable-track {
   cursor: pointer;
 }
 
-/*library*/
-
-/* #upload {
-  grid-area: library;
-}
-
-.library {
-  grid-area: library;
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  height: 700px;
-  overflow-y: auto;
-  margin: 50px 0px 0px 7px;
-  cursor: pointer;
-}
-
-.library img {
-  margin-bottom: 20px;
-} */
-
 /*canvassen*/
 
 .canvassen {
@@ -240,7 +219,6 @@ input[type="range"]::-webkit-slider-runnable-track {
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
-  margin-top: 200px; /* 30px top margin to avoid conflict with the close button on smaller screens */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -333,23 +311,6 @@ video {
     grid-area: header2;
   }
 
-  /*library*/
-
-  .library {
-    grid-area: footer2;
-    display: flex;
-    flex-direction: row;
-    width: 600px;
-    overflow-x: auto;
-    margin: 15px 0px;
-  }
-
-  .library img {
-    max-height: 45px;
-    max-width: 45px;
-    margin-right: 10px;
-  }
-
   /*slider*/
   input[type="range"] {
     width: 215%; /* Specific width is required for Firefox. */
@@ -374,7 +335,7 @@ video {
   }
 
   .overlay-content {
-    margin-top: 125px;
+    margin-top: 113px;
   }
 
   .footer {
