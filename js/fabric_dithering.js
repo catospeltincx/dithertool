@@ -21,7 +21,6 @@ var listBeginImages = [
   "img/begin017.jpg",
   "img/begin018.jpg",
   "img/begin019.jpg",
-
   "img/begin021.jpg",
   "img/begin022.jpg",
   "img/begin023.jpg",
@@ -225,7 +224,6 @@ function fabricInit() {
   var text1 = new fabric.Text("click: '???' to get along with this tool", {
     left: 50,
     top: 55,
-
     fontSize: 15,
     fontFamily: "Kosugi",
     underline: true,
@@ -250,7 +248,6 @@ function fabricInit() {
     img.set({ left: 150, top: 500 });
     gFabricCanvas.add(img);
   });
-
 }
 
 //

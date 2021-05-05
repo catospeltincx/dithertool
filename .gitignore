@@ -1,3 +1,6 @@
 .DS_Store
 
 target
+.vscode/settings.json
+img/.DS_Store
+js/fabric_dithering.js
